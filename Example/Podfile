@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '9.0'
+
+target 'LDZFAlertController_Example' do
+  pod 'LDZFAlertController', :path => '../'
+
+  target 'LDZFAlertController_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

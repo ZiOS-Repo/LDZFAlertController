@@ -1,0 +1,16 @@
+PODS:
+  - LDZFAlertController (0.1.0)
+
+DEPENDENCIES:
+  - LDZFAlertController (from `../`)
+
+EXTERNAL SOURCES:
+  LDZFAlertController:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  LDZFAlertController: 86a2cf06008c278efe57205ee498b52c67cc0ba6
+
+PODFILE CHECKSUM: adfe62c9f12c19e9281cf9a8fc5b1c4a87620053
+
+COCOAPODS: 1.11.2

@@ -1,0 +1,6 @@
+framework module Pods_LDZFAlertController_Tests {
+  umbrella header "Pods-LDZFAlertController_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}
