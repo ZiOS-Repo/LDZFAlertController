@@ -256,7 +256,7 @@
     [self.alertView removeFromSuperview];
     [self.view addSubview:self.alertView];
 #pragma mark - fix旋转时，按钮有闪烁动画
-//    [self.alertView layoutIfNeeded];
+    [self.alertView layoutIfNeeded];
 }
 
 #pragma mark - setup
@@ -295,16 +295,18 @@
     self.alertView.title = self.alertTitle;
     self.alertView.message = self.alertMessage;
     self.alertView.contentView = self.contentView;
-    __weak __typeof(self)weakSelf = self;
-    [self.alertView.contentView setDismissViewController:^{
-        __strong __typeof(weakSelf)strongSelf = weakSelf;
-        [strongSelf dismissViewController];
-    }];
     self.alertView.buttonItems = self.buttonItems;
     self.alertView.style = self.style;
     self.alertView.backgroundColor = self.style.alertView.backgroundColor;
     self.alertView.delegate = self;
     [self.view addSubview:self.alertView];
+    
+    
+    __weak __typeof(self)weakSelf = self;
+    [self.alertView.contentView setDismissViewController:^{
+        __strong __typeof(weakSelf)strongSelf = weakSelf;
+        [strongSelf dismissViewController];
+    }];
 }
 
 - (void)dismissViewController {

@@ -12,7 +12,7 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        self.contentInset = UIEdgeInsetsMake(28, 15, 28, 15);
+        self.contentInset = UIEdgeInsetsMake(20, 16, 20, 16);
         self.backgroundColor = [UIColor whiteColor];
         self.layer.cornerRadius = 8;
         self.clipsToBounds = YES;

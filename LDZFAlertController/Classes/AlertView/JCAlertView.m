@@ -39,14 +39,6 @@ NSInteger kButtonTag = 74637;
 }
 
 - (void)initSubviews {
-    UIView *topLineView = [[UIView alloc] init];
-    topLineView.backgroundColor = self.style.separator.color;
-    [self addSubview:topLineView];
-    [topLineView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.leading.top.trailing.equalTo(self);
-        make.height.mas_equalTo(self.style.separator.width);
-    }];
-    
     for (NSInteger i = 0; i < self.buttonsArray.count; i++) {
         JCAlertButtonItem *item = self.buttonsArray[i];
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -100,6 +92,16 @@ NSInteger kButtonTag = 74637;
             }];
         }
     }
+    
+    //顶部分割线
+    UIView *topLineView = [[UIView alloc] init];
+    topLineView.backgroundColor = self.style.separator.color;
+    [self addSubview:topLineView];
+    [topLineView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.top.trailing.equalTo(self);
+        make.height.mas_equalTo(self.style.separator.width);
+    }];
+
     
     //添加分割线
     if (self.buttonsArray.count == 2) {
@@ -257,6 +259,7 @@ NSInteger kButtonTag = 74637;
         [self setupButton];
         
         if (titleHeight + self.buttonHeight > 0) {
+            self.contentView.layer.cornerRadius = 0;
             self.layer.cornerRadius = style.alertView.cornerRadius;
             if (self.layer.cornerRadius > 0) {
                 self.clipsToBounds = YES;
@@ -438,9 +441,6 @@ NSInteger kButtonTag = 74637;
     }
     
     self.center = newSuperview.center;
-    
-    //重新布局
-    [self layoutIfNeeded];
 }
 
 - (void)setupButton {

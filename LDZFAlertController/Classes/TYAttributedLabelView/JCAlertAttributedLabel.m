@@ -49,7 +49,7 @@
         self.dismissViewController();
     }
     if (self.textStorageClicked) {
-        self.textStorageClicked(TextRun, point);
+        self.textStorageClicked(attributedLabel, TextRun, point);
     }
 }
 
@@ -60,7 +60,7 @@
         self.dismissViewController();
     }
     if (self.textStorageLongPressed) {
-        self.textStorageLongPressed(textStorage, state, point);
+        self.textStorageLongPressed(attributedLabel, textStorage, state, point);
     }
 }
 
@@ -71,7 +71,7 @@
         self.dismissViewController();
     }
     if (self.lableLongPressOnState) {
-        self.lableLongPressOnState(state, point);
+        self.lableLongPressOnState(attributedLabel, state, point);
     }
 }
 
@@ -83,6 +83,6 @@
     self.lable.frame = CGRectMake(0, 0, fixedWidth, 0);
     [self.lable sizeToFit];
     CGFloat h = self.lable.frame.size.height;
-    return h + 28 * 2;
+    return h + self.contentInset.top + self.contentInset.bottom;
 }
 @end

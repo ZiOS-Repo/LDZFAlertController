@@ -54,18 +54,18 @@
     alertView.maxHeight = [UIScreen mainScreen].bounds.size.height - 120;
     alertView.backgroundColor = [UIColor whiteColor];
     alertView.cornerRadius = 8;
-    
+    //UIEdgeInsetsMake(20, 16, 20, 16);
     JCAlertStyleTitle *title = [JCAlertStyleTitle new];
-    title.insets = UIEdgeInsetsMake(10, 10, 10, 10);
-    title.onlyTitleInsets = UIEdgeInsetsMake(28, 20, 28, 20);
+    title.insets = UIEdgeInsetsMake(20, 16, 0, 16);
+    title.onlyTitleInsets = UIEdgeInsetsMake(20, 16, 20, 16);
     title.font = [UIFont boldSystemFontOfSize:17];
     title.textColor = JCDefaultTextColor;
     title.backgroundColor = [UIColor whiteColor];
     title.textAlignment = NSTextAlignmentCenter;
     
     JCAlertStyleContent *content = [JCAlertStyleContent new];
-    content.insets = UIEdgeInsetsMake(5, 10, 15, 10);
-    content.onlyMessageInsets = UIEdgeInsetsMake(28, 20, 28, 20);
+    content.insets = UIEdgeInsetsMake(5, 16, 20, 16);
+    content.onlyMessageInsets = UIEdgeInsetsMake(20, 16, 20, 16);
     content.font = [UIFont systemFontOfSize:15];
     content.textColor = JCDefaultTextColor;
     content.backgroundColor = [UIColor whiteColor];
