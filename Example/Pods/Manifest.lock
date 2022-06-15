@@ -1,7 +1,9 @@
 PODS:
-  - LDZFAlertController (0.1.0):
+  - LDZFAlertController (0.1.1):
     - Masonry
+    - TYAttributedLabel
   - Masonry (1.1.0)
+  - TYAttributedLabel (2.6.9)
 
 DEPENDENCIES:
   - LDZFAlertController (from `../`)
@@ -9,14 +11,16 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Masonry
+    - TYAttributedLabel
 
 EXTERNAL SOURCES:
   LDZFAlertController:
     :path: "../"
 
 SPEC CHECKSUMS:
-  LDZFAlertController: 3629f08ce3f7c00f9e45f2da47b0635663a2c710
+  LDZFAlertController: 192b6849f45b4271d7f76a06ef2132735bf5e767
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  TYAttributedLabel: 566d7503cf9e5460f409bb5d4c14690d25088972
 
 PODFILE CHECKSUM: adfe62c9f12c19e9281cf9a8fc5b1c4a87620053
 

@@ -1,6 +1,6 @@
 {
   "name": "LDZFAlertController",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "summary": "A short description of LDZFAlertController.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/ZiOS-Repo/LDZFAlertController",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/ZiOS-Repo/LDZFAlertController.git",
-    "tag": "0.1.0"
+    "tag": "0.1.1"
   },
   "platforms": {
     "ios": "9.0"
@@ -21,6 +21,9 @@
   "source_files": "LDZFAlertController/Classes/**/*",
   "dependencies": {
     "Masonry": [
+
+    ],
+    "TYAttributedLabel": [
 
     ]
   }

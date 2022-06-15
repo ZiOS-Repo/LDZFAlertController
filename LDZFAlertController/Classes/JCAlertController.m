@@ -98,7 +98,7 @@
 
 @property (nonatomic, copy) NSString *alertTitle;
 @property (nonatomic, copy) NSString *alertMessage;
-@property (nonatomic, strong) UIView *contentView;
+@property (nonatomic, strong) JCAlertContentView *contentView;
 @property (nonatomic, strong) NSMutableArray *buttonItems;
 @property (nonatomic, strong) JCAlertStyle *style;
 @property (nonatomic, copy) void(^keyboardShowed)(CGFloat alertHeight, CGFloat keyboardHeight);
@@ -131,7 +131,7 @@
     return self;
 }
 
-- (instancetype)initWithTitle:(NSString *)title contentView:(UIView *)contentView {
+- (instancetype)initWithTitle:(NSString *)title contentView:(JCAlertContentView *)contentView {
     if (self = [super init]) {
         self.modalPresentationStyle = UIModalPresentationCustom;
         self.transitioningDelegate = self;
@@ -199,11 +199,12 @@
     [self.buttonItems addObject:item];
 }
 
-- (void)addCustomButtonWithTitle:(NSString *)title font:(UIFont *)font textColor:(UIColor *)textColor clicked:(void (^)(void))clicked {
+- (void)addCustomButtonWithTitle:(NSString *)title itemConfig:(void (^)(JCAlertButtonItem *))itemConfig clicked:(void (^)(void))clicked {
     JCAlertButtonItem *item = [JCAlertButtonItem new];
+    if (itemConfig) {
+        itemConfig(item);
+    }
     item.title = title;
-    item.font = font;
-    item.textColor = textColor;
     item.type = JCButtonTypeCustom;
     item.clicked = clicked;
     [self.buttonItems addObject:item];
@@ -294,6 +295,11 @@
     self.alertView.title = self.alertTitle;
     self.alertView.message = self.alertMessage;
     self.alertView.contentView = self.contentView;
+    __weak __typeof(self)weakSelf = self;
+    [self.alertView.contentView setDismissViewController:^{
+        __strong __typeof(weakSelf)strongSelf = weakSelf;
+        [strongSelf dismissViewController];
+    }];
     self.alertView.buttonItems = self.buttonItems;
     self.alertView.style = self.style;
     self.alertView.backgroundColor = self.style.alertView.backgroundColor;

@@ -10,6 +10,7 @@
 #endif
 #endif
 
+#import "JCAlertContentView.h"
 #import "JCAlertView.h"
 #import "JCAlertButtonItem.h"
 #import "NSAttributedString+JCCalculateSize.h"
@@ -20,6 +21,7 @@
 #import "JCPresentController.h"
 #import "UIViewController+JCPresentQueue.h"
 #import "JCAlertStyle.h"
+#import "JCAlertAttributedLabel.h"
 
 FOUNDATION_EXPORT double LDZFAlertControllerVersionNumber;
 FOUNDATION_EXPORT const unsigned char LDZFAlertControllerVersionString[];

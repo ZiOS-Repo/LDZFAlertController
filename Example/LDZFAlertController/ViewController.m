@@ -12,6 +12,8 @@
 #import "UIViewController+JCPresentQueue.h"
 #import "NormalVCForPresentation.h"
 
+#define RGB(r,g,b,a)    [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
+
 #define identifier @"identifier"
 #define longTitle @"I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title I am title "
 #define longMessage @"I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content I am content "
@@ -169,9 +171,16 @@
 - (void)titleWordsOverflow {
     JCAlertController *alert = [JCAlertController alertWithTitle:longTitle message:nil];
     [alert addButtonWithTitle:@"OK" type:JCButtonTypeNormal clicked:nil];
-    [alert addCustomButtonWithTitle:@"设置" font:[UIFont systemFontOfSize:13] textColor:[UIColor redColor] clicked:nil];
-    [alert addCustomButtonWithTitle:@"提示" font:[UIFont boldSystemFontOfSize:13] textColor:[UIColor yellowColor] clicked:nil];
-    [alert addCustomButtonWithTitle:@"报错" font:[UIFont systemFontOfSize:17] textColor:[UIColor orangeColor] clicked:nil];
+    [alert addCustomButtonWithTitle:@"设置" itemConfig:^(JCAlertButtonItem *item) {
+        item.font = [UIFont systemFontOfSize:13];
+        item.textColor = [UIColor redColor];
+        item.highlightTextColor = [[UIColor redColor] colorWithAlphaComponent:0.5];
+    } clicked:nil];
+    [alert addCustomButtonWithTitle:@"报错" itemConfig:^(JCAlertButtonItem *item) {
+        item.font = [UIFont systemFontOfSize:13];
+        item.textColor = [UIColor redColor];
+        item.highlightTextColor = [[UIColor redColor] colorWithAlphaComponent:0.5];
+    } clicked:nil];
     [JCPresentController presentViewControllerLIFO:alert presentCompletion:nil dismissCompletion:nil];
 }
 
@@ -314,16 +323,70 @@
 #pragma mark -
 
 - (void)customView {
-    // without title and button
+    //1.
+    NSArray *specials = @[@"特空",@"用户授权协议"];
+    NSString *full = [NSString stringWithFormat:@"app即将授权%@获取您的手机号。点击“同意授权”即表示您知晓并同意%@",specials.firstObject,specials.lastObject];
     
-    // setup a contentView
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    CGFloat height = [full sizeWithAttributes:@{ NSFontAttributeName: [UIFont systemFontOfSize:15] }].height;
+    paragraphStyle.lineSpacing = height * 0.1;
+    paragraphStyle.lineBreakMode = NSLineBreakByCharWrapping;
+    NSDictionary *attributes = @{ NSParagraphStyleAttributeName: paragraphStyle,
+                                  NSForegroundColorAttributeName: [UIColor blackColor],
+                                  NSFontAttributeName: [UIFont systemFontOfSize:15]
+    };
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]initWithString:full attributes:attributes];
+    for (NSString *url in specials) {
+        NSRange text_range = [[attributedString string] rangeOfString:url];
+        [attributedString setAttributes:@{
+            NSForegroundColorAttributeName:[url isEqualToString:@"特空"] ? [UIColor blueColor]:[UIColor brownColor],
+            NSFontAttributeName:[UIFont boldSystemFontOfSize:15]
+        } range:text_range];
+    }
+
+    //2.
     CGFloat width = [[JCAlertStyle alloc] init].alertView.width;
-    UIImageView *contentView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, width, width * 0.623)];
-    contentView.image = [UIImage imageNamed:@"alert"];
-    contentView.userInteractionEnabled = YES;
+    JCAlertAttributedLabel *attributedLabel = [[JCAlertAttributedLabel alloc] initWithFrame:CGRectMake(0, 0, width, 0)];
+    attributedLabel.userInteractionEnabled = YES;
+    [attributedLabel setTextStorageClicked:^(id<TYTextStorageProtocol>  _Nonnull textStorage, CGPoint point) {
+        if ([textStorage isKindOfClass:[TYLinkTextStorage class]]) {
+            TYLinkTextStorage *storage = (TYLinkTextStorage *)textStorage;
+            NSString *linkStr;
+            if ([storage.linkData isKindOfClass:NSString.class]) {
+                linkStr = storage.linkData;
+            } else if ([storage.linkData isKindOfClass:NSDictionary.class]) {
+                linkStr = storage.linkData[@"url"];
+            }
+            
+            if ([linkStr hasPrefix:@"http:"]) {
+                [[UIApplication sharedApplication] openURL:[ NSURL URLWithString:linkStr]];
+            }else {
+                UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"点击提示" message:linkStr delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
+                [alertView show];
+            }
+        }
+    }];
+    [attributedLabel.lable setAttributedText:attributedString];
+    
+    //3.追加链接信息
+    for (NSString *url in specials) {
+        NSRange text_range = [[attributedString string] rangeOfString:url];
+        NSDictionary *linkData = @{
+            @"url":[url isEqualToString:@"特空"] ? @"http://www.baidu.com":@"http://www.jd.com"
+        };
+        [attributedLabel.lable addLinkWithLinkData:linkData
+                                     linkColor:[url isEqualToString:@"特空"] ? [UIColor blueColor]:[UIColor brownColor]
+                                underLineStyle:kCTUnderlineStyleNone range:text_range];
+        [attributedLabel.lable addLinkWithLinkData:@{} linkColor:[url isEqualToString:@"特空"] ? [UIColor blueColor]:[UIColor brownColor] range:text_range];
+    }
+
+    //4.设置居中
+    attributedLabel.lable.textAlignment = kCTTextAlignmentCenter;
+
+    
     
     // pass the contentView
-    JCAlertController *alert = [JCAlertController alertWithTitle:nil contentView:contentView];
+    JCAlertController *alert = [JCAlertController alertWithTitle:nil contentView:attributedLabel];
     [JCPresentController presentViewControllerLIFO:alert presentCompletion:nil dismissCompletion:nil];
     
     // avoid retain circle
@@ -333,7 +396,8 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:[self selectorBlock:^(id weakSelf, id arg) {
         [weakAlert dismissViewControllerAnimated:YES completion:nil];
     }]];
-    [contentView addGestureRecognizer:tap];
+    [attributedLabel addGestureRecognizer:tap];
+    
 }
 
 - (void)customViewAndHandleKeyboard {

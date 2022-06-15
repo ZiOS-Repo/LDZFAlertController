@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "JCPresentController.h"
 #import "JCAlertStyle.h"
+#import "JCAlertAttributedLabel.h"
+#import "JCAlertContentView.h"
+#import "JCAlertButtonItem.h"
 
 /**
  Same level with UIAlertController.
@@ -21,19 +24,26 @@
  Class method to create 'JCAlertController' instance
  The alertView is composed of title, message and buttons
  */
-+ (instancetype)alertWithTitle:(NSString *)title message:(NSString *)message;
++ (instancetype)alertWithTitle:(NSString *)title
+                       message:(NSString *)message;
 
 /**
  The alertView is composed of title, contentView and buttons
  */
-+ (instancetype)alertWithTitle:(NSString *)title contentView:(UIView *)contentView;
++ (instancetype)alertWithTitle:(NSString *)title
+                   contentView:(JCAlertContentView *)contentView;
+
+/**
+ 添加操作按钮
+ */
+- (void)addButtonWithTitle:(NSString *)title type:(JCButtonType)type clicked:(void (^)(void))clicked;
 
 /**
  Add a button on alertView with title and action
  */
-- (void)addButtonWithTitle:(NSString *)title type:(JCButtonType)type clicked:(void (^)(void))clicked;
+- (void)addCustomButtonWithTitle:(NSString *)title itemConfig:(void (^)(JCAlertButtonItem *item))itemConfig clicked:(void (^)(void))clicked;
 
-- (void)addCustomButtonWithTitle:(NSString *)title font:(UIFont *)font textColor:(UIColor *)textColor clicked:(void (^)(void))clicked;
+
 @end
 
 @interface JCAlertController (keyboardHandle)

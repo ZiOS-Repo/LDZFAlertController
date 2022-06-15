@@ -75,11 +75,11 @@ NSInteger kButtonTag = 74637;
             [button setBackgroundImage:[UIImage createImageWithColor:self.style.buttonWarning.highlightBackgroundColor] forState:UIControlStateHighlighted];
 
         } else if (item.type == JCButtonTypeCustom) {
-            button.titleLabel.font = item.font;
-            [button setTitleColor:item.textColor forState:UIControlStateNormal];
-            [button setTitleColor:[item.textColor colorWithAlphaComponent:0.5] forState:UIControlStateHighlighted];
-            [button setBackgroundImage:[UIImage createImageWithColor:self.style.buttonNormal.backgroundColor] forState:UIControlStateNormal];
-            [button setBackgroundImage:[UIImage createImageWithColor:self.style.buttonNormal.highlightBackgroundColor] forState:UIControlStateHighlighted];
+            button.titleLabel.font = item.font ? item.font:self.style.buttonNormal.font;
+            [button setTitleColor:item.textColor ? item.textColor:self.style.buttonNormal.textColor forState:UIControlStateNormal];
+            [button setTitleColor:item.highlightTextColor ? item.highlightTextColor:self.style.buttonNormal.highlightTextColor forState:UIControlStateHighlighted];
+            [button setBackgroundImage:[UIImage createImageWithColor:item.backgroundColor ? item.backgroundColor:self.style.buttonNormal.backgroundColor] forState:UIControlStateNormal];
+            [button setBackgroundImage:[UIImage createImageWithColor:item.highlightBackgroundColor ? item.highlightBackgroundColor:self.style.buttonNormal.highlightBackgroundColor] forState:UIControlStateHighlighted];
         }
         
         [self addSubview:button];
@@ -158,7 +158,6 @@ NSInteger kButtonTag = 74637;
     for (UIView *sub in self.subviews) {
         [sub removeFromSuperview];
     }
-
     self.backgroundColor = [UIColor clearColor];
     
     JCAlertStyle *style = self.style;
@@ -195,7 +194,9 @@ NSInteger kButtonTag = 74637;
     
     // if has contentView
     if (self.contentView) {
-        CGFloat totalHeight = titleHeight + self.contentView.frame.size.height + self.buttonHeight;
+        CGFloat contentViewH = [self.contentView calculateContentViewHWithAlertViewWidth:self.style.alertView.width];
+        
+        CGFloat totalHeight = titleHeight + contentViewH + self.buttonHeight;
         CGFloat alertHeight = totalHeight > self.style.alertView.maxHeight ? self.style.alertView.maxHeight : totalHeight;
         self.frame = CGRectMake(0, 0, style.alertView.width, alertHeight);
         
@@ -235,8 +236,7 @@ NSInteger kButtonTag = 74637;
             }
         }
         
-        CGRect contentFrame = self.contentView.frame;
-        contentFrame.origin.y = titleHeight;
+        CGRect contentFrame = CGRectMake(0, titleHeight, self.style.alertView.width, contentViewH);
         
         CGFloat maxContentHeight = self.style.alertView.maxHeight - titleHeight - self.buttonHeight;
         if (CGRectGetHeight(contentFrame) > maxContentHeight) {
@@ -245,8 +245,10 @@ NSInteger kButtonTag = 74637;
             UIScrollView *contentScrollView = [[UIScrollView alloc] initWithFrame:scrollFrame];
             contentScrollView.contentSize = contentFrame.size;
             contentScrollView.backgroundColor = self.style.alertView.backgroundColor;
-            [contentScrollView addSubview:self.contentView];
             [self addSubview:contentScrollView];
+            
+            self.contentView.frame = CGRectMake(0, 0, self.style.alertView.width, contentViewH);;
+            [contentScrollView addSubview:self.contentView];
         } else {
             self.contentView.frame = contentFrame;
             [self addSubview:self.contentView];

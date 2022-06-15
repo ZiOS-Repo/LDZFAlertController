@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "JCAlertStyle.h"
-
+#import "JCAlertContentView.h"
 @protocol JCAlertViewDelegate <NSObject>
 
 - (void)alertButtonClicked:(void(^)(void))clicked;
@@ -19,10 +19,12 @@
 
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *message;
-@property (nonatomic, strong) UIView *contentView;
+@property (nonatomic, strong) JCAlertContentView *contentView;
 @property (nonatomic, strong) NSArray *buttonItems;
 @property (nonatomic, strong) JCAlertStyle *style;
 
 @property (nonatomic, weak) id <JCAlertViewDelegate> delegate;
 
 @end
+
+
