@@ -33,6 +33,7 @@
  */
 - (void)addButtonWithTitle:(NSString *)title type:(JCButtonType)type clicked:(void (^)(void))clicked;
 
+- (void)addCustomButtonWithTitle:(NSString *)title font:(UIFont *)font textColor:(UIColor *)textColor clicked:(void (^)(void))clicked;
 @end
 
 @interface JCAlertController (keyboardHandle)
@@ -65,17 +66,5 @@
  @param animated is animated
  */
 - (void)moveAlertViewToScreenCenterAnimated:(BOOL)animated;
-
-@end
-
-@interface JCAlertController (Deprecated)
-
-/**
- It's too waste time to pass parameter `type` each time.
- */
-+ (instancetype)alertWithTitle:(NSString *)title message:(NSString *)message type:(JCAlertType)type NS_DEPRECATED_IOS(2.0, 6.0, "Use + (instancetype)alertWithTitle:(NSString *)title message:(NSString *)message; please!");
-+ (instancetype)alertWithTitle:(NSString *)title contentView:(UIView *)contentView type:(JCAlertType)type NS_DEPRECATED_IOS(2.0, 6.0, "Use + (instancetype)alertWithTitle:(NSString *)title contentView:(UIView *)contentView; please!");
-- (instancetype)initWithTitle:(NSString *)title message:(NSString *)message type:(JCAlertType)type NS_DEPRECATED_IOS(2.0, 6.0, "Use + (instancetype)alertWithTitle:(NSString *)title message:(NSString *)message; please!");
-- (instancetype)initWithTitle:(NSString *)title contentView:(UIView *)contentView type:(JCAlertType)type NS_DEPRECATED_IOS(2.0, 6.0, "Use + (instancetype)alertWithTitle:(NSString *)title contentView:(UIView *)contentView; please!");
 
 @end

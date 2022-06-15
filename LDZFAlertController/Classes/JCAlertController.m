@@ -12,6 +12,7 @@
 #import "JCAlertStyle.h"
 #import "NSAttributedString+JCCalculateSize.h"
 #import "JCAlertButtonItem.h"
+#import <Masonry/Masonry.h>
 
 @interface JCAlertController ()
 
@@ -107,34 +108,21 @@
 
 @implementation JCAlertController
 
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wdeprecated-declarations"
-
 + (instancetype)alertWithTitle:(NSString *)title message:(NSString *)message {
-    return [self alertWithTitle:title message:message type:0];
+    return [[self alloc] initWithTitle:title message:message];
 }
 
 + (instancetype)alertWithTitle:(NSString *)title contentView:(UIView *)contentView {
-    return [self alertWithTitle:title contentView:contentView type:0];
+    return [[self alloc] initWithTitle:title contentView:contentView];
 }
 
-#pragma clang diagnostic pop
-
-+ (instancetype)alertWithTitle:(NSString *)title message:(NSString *)message type:(JCAlertType)type {
-    return [[self alloc] initWithTitle:title message:message type:type];
-}
-
-+ (instancetype)alertWithTitle:(NSString *)title contentView:(UIView *)contentView type:(JCAlertType)type {
-    return [[self alloc] initWithTitle:title contentView:contentView type:type];
-}
-
-- (instancetype)initWithTitle:(NSString *)title message:(NSString *)message type:(JCAlertType)type{
+- (instancetype)initWithTitle:(NSString *)title message:(NSString *)message {
     if (self = [super init]) {
         self.modalPresentationStyle = UIModalPresentationCustom;
         self.transitioningDelegate = self;
         self.alertTitle = title;
         self.alertMessage = message;
-        self.style = [JCAlertStyle shareStyle];
+        self.style = [[JCAlertStyle alloc] init];
         
         if (self.alertTitle.length == 0 && self.alertMessage.length == 0) {
             [NSException raise:@"can not show" format:@"%@: need title or message at least one", self];
@@ -143,14 +131,14 @@
     return self;
 }
 
-- (instancetype)initWithTitle:(NSString *)title contentView:(UIView *)contentView type:(JCAlertType)type {
+- (instancetype)initWithTitle:(NSString *)title contentView:(UIView *)contentView {
     if (self = [super init]) {
         self.modalPresentationStyle = UIModalPresentationCustom;
         self.transitioningDelegate = self;
         self.alertTitle = title;
         self.contentView = contentView;
-        self.style = [JCAlertStyle shareStyle];
-        
+        self.style = [[JCAlertStyle alloc] init];
+
         if (self.alertTitle.length == 0 && contentView.frame.size.width != self.style.alertView.width) {
             [NSException raise:@"can not show" format:@"%@: title is empty or contentView's width is not equal to alertView's width", self];
         }
@@ -198,16 +186,12 @@
 
 - (NSMutableArray *)buttonItems {
     if (!_buttonItems) {
-        _buttonItems = [NSMutableArray arrayWithCapacity:2];
+        _buttonItems = [NSMutableArray array];
     }
     return _buttonItems;
 }
 
 - (void)addButtonWithTitle:(NSString *)title type:(JCButtonType)type clicked:(void (^)(void))clicked {
-    if (self.buttonItems.count >= 2) {
-        [NSException raise:@"You can add 2 buttons at most" format:@"%@: already has %zi buttons", self, self.buttonItems.count];
-    }
-    
     JCAlertButtonItem *item = [JCAlertButtonItem new];
     item.title = title;
     item.type = type;
@@ -215,13 +199,66 @@
     [self.buttonItems addObject:item];
 }
 
+- (void)addCustomButtonWithTitle:(NSString *)title font:(UIFont *)font textColor:(UIColor *)textColor clicked:(void (^)(void))clicked {
+    JCAlertButtonItem *item = [JCAlertButtonItem new];
+    item.title = title;
+    item.font = font;
+    item.textColor = textColor;
+    item.type = JCButtonTypeCustom;
+    item.clicked = clicked;
+    [self.buttonItems addObject:item];
+}
+
+
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self setupBlurView];
     [self setupAlphaCoverView];
     [self setupAlertView];
+    [self setupRegisterNotification];
 }
+
+#pragma mark - 屏幕旋转
+/*
+ 屏幕旋转后，方法调用顺序:
+ didChangeRotate会调用两次！！！
+ 1. didChangeRotate
+ 2. viewWillTransitionToSize
+ 3. didChangeRotate
+ */
+//注册屏幕旋转通知
+- (void)setupRegisterNotification {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didChangeRotate:) name:UIApplicationDidChangeStatusBarFrameNotification object:nil];
+}
+
+- (void)didChangeRotate:(NSNotification*)notice {
+    if ([[UIDevice currentDevice] orientation] == UIInterfaceOrientationPortrait ||
+        [[UIDevice currentDevice] orientation] == UIInterfaceOrientationPortraitUpsideDown) {
+        //竖屏
+        NSLog(@"竖屏");
+        self.alertView.center = self.view.center;
+    } else {
+        //横屏
+        NSLog(@"横屏");
+        self.alertView.center = self.view.center;
+    }
+}
+
+// 横竖屏将要切换会调用
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
+    NSLog(@"横竖屏进行了切换size:%@",NSStringFromCGSize(size));
+    self.style.alertView.width = MIN([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height) == 320 ? 260 : 280;
+    self.style.alertView.maxHeight = [UIScreen mainScreen].bounds.size.height - 120;
+    [self.alertView removeFromSuperview];
+    [self.view addSubview:self.alertView];
+#pragma mark - fix旋转时，按钮有闪烁动画
+//    [self.alertView layoutIfNeeded];
+}
+
+#pragma mark - setup
 
 - (void)setupBlurView {
     if (self.style.background.blur) {
@@ -231,6 +268,9 @@
             if ([NSStringFromClass([window class]) isEqualToString:@"UIWindow"] && CGRectEqualToRect(window.frame, [UIScreen mainScreen].bounds)) {
                 self.blurView = [window blurScreenshot];
                 [self.view addSubview:self.blurView];
+                [self.blurView mas_makeConstraints:^(MASConstraintMaker *make) {
+                    make.edges.mas_equalTo(self.view);
+                }];
                 break;
             }
         }
@@ -241,6 +281,9 @@
     self.coverView = [[UIButton alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.coverView.backgroundColor = [UIColor colorWithRed:5/255.0 green:0 blue:10/255.0 alpha:1.0];
     [self.view addSubview:self.coverView];
+    [self.coverView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(self.view);
+    }];
     if (self.style.background.canDismiss) {
         [self.coverView addTarget:self action:@selector(dismissViewController) forControlEvents:UIControlEventTouchUpInside];
     }

@@ -12,6 +12,9 @@
 @interface JCAlertButtonItem : NSObject
 
 @property (nonatomic, copy) NSString *title;
+@property (nonatomic, strong) UIFont *font;
+@property (nonatomic, strong) UIColor *textColor;
+
 @property (nonatomic, copy) void (^clicked)(void);
 @property (nonatomic) JCButtonType type;
 

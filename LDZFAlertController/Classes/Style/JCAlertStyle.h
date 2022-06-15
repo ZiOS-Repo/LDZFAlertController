@@ -12,7 +12,8 @@
 typedef NS_OPTIONS (NSUInteger, JCButtonType){
     JCButtonTypeNormal = 0,
     JCButtonTypeCancel,
-    JCButtonTypeWarning
+    JCButtonTypeWarning,
+    JCButtonTypeCustom
 };
 
 @interface JCAlertStyleAlertView : NSObject
@@ -81,20 +82,5 @@ typedef NS_OPTIONS (NSUInteger, JCButtonType){
 @property (nonatomic, strong) JCAlertStyleButtonCancel *buttonCancel;
 @property (nonatomic, strong) JCAlertStyleButtonWarning *buttonWarning;
 @property (nonatomic, strong) JCAlertStyleSeparator *separator;
-
-+ (instancetype)shareStyle;
-
-@end
-
-@interface JCAlertStyle (Deprecated)
-
-typedef NS_OPTIONS (NSUInteger, JCAlertType){
-    JCAlertTypeNormal NS_ENUM_DEPRECATED_IOS(2.0, 6.0, "No longer support") = 0,
-    JCAlertTypeTitleOnly NS_ENUM_DEPRECATED_IOS(2.0, 6.0, "No longer support"),
-    JCAlertTypeContentOnly NS_ENUM_DEPRECATED_IOS(2.0, 6.0, "No longer support"),
-    JCAlertTypeCustom NS_ENUM_DEPRECATED_IOS(2.0, 6.0, "No longer support")
-};
-
-+ (JCAlertStyle *)styleWithType:(JCAlertType)type NS_DEPRECATED_IOS(2.0, 6.0, "Use + (instancetype)alertWithTitle:(NSString *)title message:(NSString *)message; please!");
 
 @end

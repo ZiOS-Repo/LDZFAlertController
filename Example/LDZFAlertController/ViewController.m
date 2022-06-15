@@ -162,24 +162,31 @@
 - (void)titleAndContentBoth {
     JCAlertController *alert = [JCAlertController alertWithTitle:@"JCAlertController" message:@"Support custom Style.\nSupport custom View.\nSupport presented with LIFO."];
     [alert addButtonWithTitle:@"OK" type:JCButtonTypeNormal clicked:nil];
+    [alert addButtonWithTitle:@"OK" type:JCButtonTypeNormal clicked:nil];
     [JCPresentController presentViewControllerLIFO:alert presentCompletion:nil dismissCompletion:nil];
 }
 
 - (void)titleWordsOverflow {
     JCAlertController *alert = [JCAlertController alertWithTitle:longTitle message:nil];
     [alert addButtonWithTitle:@"OK" type:JCButtonTypeNormal clicked:nil];
+    [alert addCustomButtonWithTitle:@"设置" font:[UIFont systemFontOfSize:13] textColor:[UIColor redColor] clicked:nil];
+    [alert addCustomButtonWithTitle:@"提示" font:[UIFont boldSystemFontOfSize:13] textColor:[UIColor yellowColor] clicked:nil];
+    [alert addCustomButtonWithTitle:@"报错" font:[UIFont systemFontOfSize:17] textColor:[UIColor orangeColor] clicked:nil];
     [JCPresentController presentViewControllerLIFO:alert presentCompletion:nil dismissCompletion:nil];
 }
 
 - (void)contentWordsOverflow {
     JCAlertController *alert = [JCAlertController alertWithTitle:@"I am title" message:longMessage];
     [alert addButtonWithTitle:@"OK" type:JCButtonTypeNormal clicked:nil];
+    [alert addButtonWithTitle:@"Normal" type:JCButtonTypeNormal clicked:nil];
+    [alert addButtonWithTitle:@"Cancel" type:JCButtonTypeCancel clicked:nil];
+    [alert addButtonWithTitle:@"Warning" type:JCButtonTypeWarning clicked:nil];
     [JCPresentController presentViewControllerLIFO:alert presentCompletion:nil dismissCompletion:nil];
 }
 
 - (void)customStyle {
     // See all properties in JCAlertStyle
-    JCAlertStyle *style = [JCAlertStyle shareStyle];
+    JCAlertStyle *style = [[JCAlertStyle alloc] init];
     
     style.background.blur = YES;
     style.background.alpha = 0.65;
@@ -310,7 +317,7 @@
     // without title and button
     
     // setup a contentView
-    CGFloat width = [JCAlertStyle shareStyle].alertView.width;
+    CGFloat width = [[JCAlertStyle alloc] init].alertView.width;
     UIImageView *contentView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, width, width * 0.623)];
     contentView.image = [UIImage imageNamed:@"alert"];
     contentView.userInteractionEnabled = YES;
@@ -332,8 +339,8 @@
 - (void)customViewAndHandleKeyboard {
     // without title
     
-    CGFloat width = [JCAlertStyle shareStyle].alertView.width;
-    
+    CGFloat width = [[JCAlertStyle alloc] init].alertView.width;
+
     // setup contentView with a textField inside
     UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, width - 20, 26)];
     textField.backgroundColor = [UIColor colorWithRed:241/255.0 green:241/255.0 blue:241/255.0 alpha:1.0];
@@ -373,7 +380,7 @@
 
 - (void)customViewAndAttributedString {
     // without title
-    CGFloat width = [JCAlertStyle shareStyle].alertView.width;
+    CGFloat width = [[JCAlertStyle alloc] init].alertView.width;
     UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, width, 100)];
     label.backgroundColor = [UIColor whiteColor];
     label.textAlignment = NSTextAlignmentCenter;

@@ -7,123 +7,192 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		013BD7C01FAFD3DB9485574757302D81 /* Pods-LDZFAlertController_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 884E7DD58FB936338BFD758E537E7C93 /* Pods-LDZFAlertController_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		006FF7C89B4E1631933AD3AAAC42365C /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 071EEE0A3CE36E163E09EA7F7915F1DE /* NSLayoutConstraint+MASDebugAdditions.m */; };
+		0BD1470816B89AAB474532D7FA6CD302 /* NSArray+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 30EC6C5D191587619B42076546EDC448 /* NSArray+MASAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0EA50D8491D0C618627453CE35FABF22 /* UIWindow+JCBlur.h in Headers */ = {isa = PBXBuildFile; fileRef = 295797B3CD0AD925CA8E3260DF462891 /* UIWindow+JCBlur.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0EF45BF2D28CDA5E44348B63DDF3629B /* MASLayoutConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 6FF4AF21902029EC43C354AC0978CE49 /* MASLayoutConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		12350BD143E2B69845A5E6794CEF9243 /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = EB7CC7527FD599A1064055C060E14B43 /* MASCompositeConstraint.m */; };
 		125BB821E8BB84D2B2DE5BEEFE358FCB /* Pods-LDZFAlertController_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 047C6E4A0819A46B4DF799F3621199C0 /* Pods-LDZFAlertController_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		15847F62D9B8A684581A1EBFF9125F8F /* UIViewController+JCPresentQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = A434C7DA1CDDCF44DB039F4BFD7FB15B /* UIViewController+JCPresentQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		15D058080792E15A154494FF63B924A7 /* JCPresentController.h in Headers */ = {isa = PBXBuildFile; fileRef = E1859C531CDC1D389BE0D4F6E64CA1B8 /* JCPresentController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		16EEA2D7922EA3E1DDDE1E28B9DEB2B0 /* UIViewController+JCPresentQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E53E7AB8C34E33AC7E7F98FAB1B28A5 /* UIViewController+JCPresentQueue.m */; };
-		1C32F4CF859FE42DDC0821015D9B0932 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		24DD2281DF76090EE1B9C559BF91271D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		2D800A53C85CEDE11594F5B85C9018BB /* NSAttributedString+JCCalculateSize.h in Headers */ = {isa = PBXBuildFile; fileRef = 58A014ADFEF3B6EE1621F123E0D0021C /* NSAttributedString+JCCalculateSize.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2EABA738F3E9E9E83206A09A7601FF9C /* LDZFAlertController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F8936E39C59922E41BAD1A6CCECC992 /* LDZFAlertController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		37C79581D9622841E7955B22C79B0624 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		39B7A2872D83829CCEE6F8F7DDB6BC02 /* UIWindow+JCBlur.h in Headers */ = {isa = PBXBuildFile; fileRef = 295797B3CD0AD925CA8E3260DF462891 /* UIWindow+JCBlur.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		414183AE25379C68BE8C0F41798AD01A /* JCAlertButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA3E1F8C52DB4D38BF07C4A2550CC00 /* JCAlertButtonItem.m */; };
-		5F550BD96BFE2364CE4D14883C52E3B1 /* JCPresentController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB3AA4AE78E0BDE1FB8B206D64E2069 /* JCPresentController.m */; };
-		5FA5BA43B4DD81AA34307560DA64EAE4 /* JCAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = C90BB354930DAD14C95104CEB5A98671 /* JCAlertView.m */; };
-		63D53AA6A26EFF330DB4D59DE80026A5 /* LDZFAlertController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A63E803FAEC946334695E5326D71D70 /* LDZFAlertController-dummy.m */; };
-		63ED2BFB9BEC7283EC15BF6C22B326F1 /* Pods-LDZFAlertController_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FBBA6062827B9424B6B60C2E186DFBD7 /* Pods-LDZFAlertController_Example-dummy.m */; };
-		695B50E36454FD19BC499EA80C8AD09C /* JCAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 617A8BE319FB5C91E72F11EA61338593 /* JCAlertController.m */; };
-		7C924684BBBAF3415DEF49492F6FD375 /* NSAttributedString+JCCalculateSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 54CC36FBED4F1E8A12C017B637621F88 /* NSAttributedString+JCCalculateSize.m */; };
-		980026EF835F78195763BD7B528C88AB /* JCAlertButtonItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E8D7BCBD16552F217CE11F41F16124E /* JCAlertButtonItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9BEC15D6675EC27836C2AE443865BB03 /* JCAlertController.h in Headers */ = {isa = PBXBuildFile; fileRef = EABFC0BB2D752E2A8E45A099AAA9399D /* JCAlertController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B722B2751188617B0FC2AC02A792B5C6 /* JCAlertStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = ABF4F21D7A192F133C01D7A3E00529A9 /* JCAlertStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C33D5CE879D8B7C37C63E60EB292FC16 /* JCAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = DFA7008AD8DEA647DCC2B4C571770045 /* JCAlertView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C57813C88C1BDFCEC5A286232178FFA4 /* UIColor+JCHightlightedColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 972D9A7E0A3F322BCF6089E9C872A0E9 /* UIColor+JCHightlightedColor.m */; };
+		195012E52FB7BBBE4A5D86A36339224E /* NSArray+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 27E12E3D2779B5C7A8301A94F715DB4C /* NSArray+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1AC717E990C7B5EB50E9CCD412F8B50C /* UIColor+JCHightlightedColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 1500662F5A8F48038A78E5774E4111EA /* UIColor+JCHightlightedColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1C32F4CF859FE42DDC0821015D9B0932 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
+		22AB6B7D074DD7EBD6833FA6F7B0FD56 /* NSLayoutConstraint+MASDebugAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = E7851906D7976272A721C8C4E0CE9092 /* NSLayoutConstraint+MASDebugAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2E0BCF0CB090E58DF556044A799F8E17 /* MASViewAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = A78D3443F105E00FC21FE5A357C8F716 /* MASViewAttribute.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3F092C9BBB1CCDE8BD9E53A78066BBBB /* JCAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 617A8BE319FB5C91E72F11EA61338593 /* JCAlertController.m */; };
+		3F18FC9A35711FFE63E9804CAB2415BA /* Pods-LDZFAlertController_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 884E7DD58FB936338BFD758E537E7C93 /* Pods-LDZFAlertController_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4406B4845684D17EED65BCDAE562F407 /* UIWindow+JCBlur.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C450F2B53FC4C1029DBA35DD138E55 /* UIWindow+JCBlur.m */; };
+		47CC2875766AAFD344DBC55BD54E9A03 /* MASCompositeConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 4AD89987EC7EAE20D7034EEF9935E7CC /* MASCompositeConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4ED2E087D8F02EAFCE8B119DEEA320B6 /* Masonry-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CF8069504999FB8BF5FA1529175AA74 /* Masonry-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		54E4E2B466BA024E176CC8C349B6380D /* UIImage+JCColor2Image.m in Sources */ = {isa = PBXBuildFile; fileRef = B4865A14346CDC21191D2D32763C17B1 /* UIImage+JCColor2Image.m */; };
+		5832445E3B9D8030E0ACBE7B2E9A2EC3 /* MASConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 02CA69FDFD4D7BB11F8E3E2E7A0B9879 /* MASConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5C3DFCE1107502CFC4E4C7C8285E9C39 /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E17443EA85E103F4DD0553AB6BB942A /* MASLayoutConstraint.m */; };
+		5CFC5BFE7286A3972971C9F889655460 /* JCAlertController.h in Headers */ = {isa = PBXBuildFile; fileRef = EABFC0BB2D752E2A8E45A099AAA9399D /* JCAlertController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5F5A5C8D87D5C1FBD4A7139EEF74D5CB /* View+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 047EE388CF208BD5F57049BD98558C94 /* View+MASAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		60B213621083A87A42A3F124B6C0A230 /* NSAttributedString+JCCalculateSize.h in Headers */ = {isa = PBXBuildFile; fileRef = 58A014ADFEF3B6EE1621F123E0D0021C /* NSAttributedString+JCCalculateSize.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		654C947E4445C602B6762E4A9F69579B /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 9073C3B74BC30C55B4EB5B2A596EAD72 /* MASConstraint.m */; };
+		668699018C9DA6BB59ACFAD45E65A329 /* MASConstraint+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 837834476F3329FA118B081516D4FC28 /* MASConstraint+Private.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		674F2327755A0E515002A1C0E491D770 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */; };
+		6A99EB15AB9A43DCB407D799DA1B7AF2 /* MASConstraintMaker.h in Headers */ = {isa = PBXBuildFile; fileRef = B28EC2F4C626ED77509645BE3805CB29 /* MASConstraintMaker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6B2F9EAFCDB47D29C9896AA345D0FC87 /* JCAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = DFA7008AD8DEA647DCC2B4C571770045 /* JCAlertView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6CAD360D2F4F3A3A243E7F939FDF3A4F /* UIViewController+JCPresentQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = A434C7DA1CDDCF44DB039F4BFD7FB15B /* UIViewController+JCPresentQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7638B7E0B94C019CA5AF56F8C11A8424 /* Pods-LDZFAlertController_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FBBA6062827B9424B6B60C2E186DFBD7 /* Pods-LDZFAlertController_Example-dummy.m */; };
+		7C7DE0A2394CD87BCD9641B201B9A114 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AF4497913DB548AE2E03103D3A97F34F /* View+MASAdditions.m */; };
+		81D77AAD10D3E2F79F9D3359E52E9DB7 /* JCAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = C90BB354930DAD14C95104CEB5A98671 /* JCAlertView.m */; };
+		81E9977A2D6C684FEDDA3411FD7A216E /* MASUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 607937A372913475EE7EAE532760ACD4 /* MASUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		855250CE9FC7E74735663A6EC2C67426 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
+		870861B9E751DD2C1286B8241328DB11 /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AEEBD88282BA13360CAA867D8465C75 /* NSArray+MASAdditions.m */; };
+		8BB5458E24D009D9A134D8BE5EEE9D28 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 342C4D9B5E1E36390E7AF01E35444998 /* ViewController+MASAdditions.m */; };
+		97E135E6C32E985DE90F3B1067A3D662 /* JCPresentController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB3AA4AE78E0BDE1FB8B206D64E2069 /* JCPresentController.m */; };
+		9A57324820751A10B449BBA0533BE897 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
+		9C3D373D687F22D65A44225004798BD5 /* JCPresentController.h in Headers */ = {isa = PBXBuildFile; fileRef = E1859C531CDC1D389BE0D4F6E64CA1B8 /* JCPresentController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9CE2CE9712AE3323DB25334906F47A70 /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 470C5CD1265270E95A8A89443C727427 /* MASConstraintMaker.m */; };
+		A694B5CCDD8877C71D98CFB60BDDE84B /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = A8BCCE8C6C17F326AFEDF4357C62ADAF /* MASViewAttribute.m */; };
+		A6A88BC81962F44DAC54702E090B26CC /* JCAlertStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = ACBF17BA71B1E908BD4587B67DEB1434 /* JCAlertStyle.m */; };
+		A8FDE18AD84B3AFD1FAEF913CE524949 /* JCAlertButtonItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E8D7BCBD16552F217CE11F41F16124E /* JCAlertButtonItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AACBF20A31130D9AA6075CFB2DCF316A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
+		AB2CBC60AF99C671BDBCAC0436A1515F /* MASViewConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = D12E9F350C1C8076BE92719B89951AD8 /* MASViewConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ADF15C3636E9A05CD8B2CFB8121BFBD6 /* UIColor+JCHightlightedColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 972D9A7E0A3F322BCF6089E9C872A0E9 /* UIColor+JCHightlightedColor.m */; };
+		B30D4A012771712C9F7B38CAB3D161DE /* JCAlertButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA3E1F8C52DB4D38BF07C4A2550CC00 /* JCAlertButtonItem.m */; };
+		B320004B903386AB3FC71938E0DCBE79 /* UIViewController+JCPresentQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E53E7AB8C34E33AC7E7F98FAB1B28A5 /* UIViewController+JCPresentQueue.m */; };
+		B84B3FD4FCDCC22D0301EB4A0A33D503 /* Masonry.h in Headers */ = {isa = PBXBuildFile; fileRef = EDA8A3885BC33F25CB32442EB2449111 /* Masonry.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C0BB50AC519A3CFACEC407E71D81CABA /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 72A95F8027E3EB86CB9AE2D7539201FE /* MASViewConstraint.m */; };
+		C1EE8377D3F8DC54D74173CF23D951BE /* UIImage+JCColor2Image.h in Headers */ = {isa = PBXBuildFile; fileRef = 070282D5E706CFFA62249B1748F6C1CC /* UIImage+JCColor2Image.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D52F115BF2EB8634B96650BB62BAB266 /* Pods-LDZFAlertController_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 919DC43780BCEDBFCE00A2658E5ACBC8 /* Pods-LDZFAlertController_Tests-dummy.m */; };
-		D7F59C5291D36819A6B0281B4E5197F7 /* UIImage+JCColor2Image.m in Sources */ = {isa = PBXBuildFile; fileRef = B4865A14346CDC21191D2D32763C17B1 /* UIImage+JCColor2Image.m */; };
-		D87D535CDE7ABD5553AA1B7BD59CC242 /* UIImage+JCColor2Image.h in Headers */ = {isa = PBXBuildFile; fileRef = 070282D5E706CFFA62249B1748F6C1CC /* UIImage+JCColor2Image.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EFFF2FD1ADB17C8D32C57FC17106806A /* JCAlertStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = ACBF17BA71B1E908BD4587B67DEB1434 /* JCAlertStyle.m */; };
-		F5E06118F943A11C131D74847EDF5285 /* UIColor+JCHightlightedColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 1500662F5A8F48038A78E5774E4111EA /* UIColor+JCHightlightedColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F632EDC78A619F0BC0B1FCC2EE9B0501 /* UIWindow+JCBlur.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C450F2B53FC4C1029DBA35DD138E55 /* UIWindow+JCBlur.m */; };
+		D90EAEF3B0F5C2594202CA122F98FFF9 /* View+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 86765B456E483806C4E13D2DD50E40A4 /* View+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DA353674E51235757970F7256E99C4B1 /* ViewController+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 55960467D1B758EC688A18A171012E78 /* ViewController+MASAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DF2FAB1519A735184C0CA179CB99885A /* LDZFAlertController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F8936E39C59922E41BAD1A6CCECC992 /* LDZFAlertController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E3476BB07476E645577663926AF51541 /* LDZFAlertController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A63E803FAEC946334695E5326D71D70 /* LDZFAlertController-dummy.m */; };
+		F22AA85B9798F21BCAE7714C8BDED656 /* JCAlertStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = ABF4F21D7A192F133C01D7A3E00529A9 /* JCAlertStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F2570AC0206FD0A4FC9F4D17F7B6D897 /* NSAttributedString+JCCalculateSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 54CC36FBED4F1E8A12C017B637621F88 /* NSAttributedString+JCCalculateSize.m */; };
+		F990CAC590E21C05C870CF0D63208D41 /* Masonry-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A85AE9E36F67A1B513CB8DA940771B4F /* Masonry-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		136E72E54DAFB07EE696B368C9C187FE /* PBXContainerItemProxy */ = {
+		08E18BCD9A4D5574B9BD7141A1EF4240 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 683854E95B27B0416C8E3CBB5C3AD04A;
-			remoteInfo = LDZFAlertController;
+			remoteGlobalIDString = 55AF53E6C77A10ED4985E04D74A8878E;
+			remoteInfo = Masonry;
 		};
-		8FE1CC2EE5F82646D52A117A474777E1 /* PBXContainerItemProxy */ = {
+		3EE6DD5A4379F924FCD97B062C7BF490 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = CF1F702B6DAE0C4A3D178580121E1929;
 			remoteInfo = "Pods-LDZFAlertController_Example";
 		};
+		7E8C3B33EB0AF2B6ADF3357AC675D0AF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 55AF53E6C77A10ED4985E04D74A8878E;
+			remoteInfo = Masonry;
+		};
+		D4FF73B7C141E6827F493C4A1D8435E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 683854E95B27B0416C8E3CBB5C3AD04A;
+			remoteInfo = LDZFAlertController;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		02CA69FDFD4D7BB11F8E3E2E7A0B9879 /* MASConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASConstraint.h; path = Masonry/MASConstraint.h; sourceTree = "<group>"; };
 		047C6E4A0819A46B4DF799F3621199C0 /* Pods-LDZFAlertController_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LDZFAlertController_Tests-umbrella.h"; sourceTree = "<group>"; };
+		047EE388CF208BD5F57049BD98558C94 /* View+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "View+MASAdditions.h"; path = "Masonry/View+MASAdditions.h"; sourceTree = "<group>"; };
 		070282D5E706CFFA62249B1748F6C1CC /* UIImage+JCColor2Image.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIImage+JCColor2Image.h"; sourceTree = "<group>"; };
+		071EEE0A3CE36E163E09EA7F7915F1DE /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSLayoutConstraint+MASDebugAdditions.m"; path = "Masonry/NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
 		07959C3ADB258DFA39BE9B7847EB0987 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		084B349F778198B2F570C4AB4D84B3FB /* LDZFAlertController */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = LDZFAlertController; path = LDZFAlertController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1500662F5A8F48038A78E5774E4111EA /* UIColor+JCHightlightedColor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIColor+JCHightlightedColor.h"; sourceTree = "<group>"; };
 		1A63E803FAEC946334695E5326D71D70 /* LDZFAlertController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LDZFAlertController-dummy.m"; sourceTree = "<group>"; };
 		1E53E7AB8C34E33AC7E7F98FAB1B28A5 /* UIViewController+JCPresentQueue.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JCPresentQueue.m"; sourceTree = "<group>"; };
+		1FFED36A657123030ABB700256D73F15 /* Masonry */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Masonry; path = Masonry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		27E12E3D2779B5C7A8301A94F715DB4C /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASShorthandAdditions.h"; path = "Masonry/NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		295797B3CD0AD925CA8E3260DF462891 /* UIWindow+JCBlur.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIWindow+JCBlur.h"; sourceTree = "<group>"; };
 		2F6E2876355E52DB77583423F239675C /* Pods-LDZFAlertController_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LDZFAlertController_Tests-Info.plist"; sourceTree = "<group>"; };
+		30EC6C5D191587619B42076546EDC448 /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASAdditions.h"; path = "Masonry/NSArray+MASAdditions.h"; sourceTree = "<group>"; };
 		317E7E0EF7142122B468057DA1CD15F0 /* Pods-LDZFAlertController_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LDZFAlertController_Example.release.xcconfig"; sourceTree = "<group>"; };
+		342C4D9B5E1E36390E7AF01E35444998 /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "ViewController+MASAdditions.m"; path = "Masonry/ViewController+MASAdditions.m"; sourceTree = "<group>"; };
 		34F2540485236F9E98C79AEF3064A737 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		39B9380DCE563E793ABFCAA327E9F8ED /* Pods-LDZFAlertController_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LDZFAlertController_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		39FC410209356383ADBC58DC3DED8362 /* Pods-LDZFAlertController_Example */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-LDZFAlertController_Example"; path = Pods_LDZFAlertController_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E537C1F47DA8B06DA4A71E3D14F4DE4 /* Masonry.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Masonry.modulemap; sourceTree = "<group>"; };
 		40B560E25E78899402B5E539F9C9DF4E /* Pods-LDZFAlertController_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LDZFAlertController_Example-Info.plist"; sourceTree = "<group>"; };
+		419A961AD957E23BAB6A998ED7623134 /* Masonry.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Masonry.release.xcconfig; sourceTree = "<group>"; };
 		42CDF216740FDBE1C30F57D2AA05E205 /* Pods-LDZFAlertController_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LDZFAlertController_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		470C5CD1265270E95A8A89443C727427 /* MASConstraintMaker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASConstraintMaker.m; path = Masonry/MASConstraintMaker.m; sourceTree = "<group>"; };
+		4AD89987EC7EAE20D7034EEF9935E7CC /* MASCompositeConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASCompositeConstraint.h; path = Masonry/MASCompositeConstraint.h; sourceTree = "<group>"; };
 		4E819A676CAF71C86CC605CBEA1240CC /* LDZFAlertController.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LDZFAlertController.debug.xcconfig; sourceTree = "<group>"; };
 		54CC36FBED4F1E8A12C017B637621F88 /* NSAttributedString+JCCalculateSize.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+JCCalculateSize.m"; sourceTree = "<group>"; };
+		55960467D1B758EC688A18A171012E78 /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ViewController+MASAdditions.h"; path = "Masonry/ViewController+MASAdditions.h"; sourceTree = "<group>"; };
 		58A014ADFEF3B6EE1621F123E0D0021C /* NSAttributedString+JCCalculateSize.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+JCCalculateSize.h"; sourceTree = "<group>"; };
 		59E2F9ACA7EE3BF26A115A4FD3EBC831 /* Pods-LDZFAlertController_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LDZFAlertController_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		5E8D7BCBD16552F217CE11F41F16124E /* JCAlertButtonItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JCAlertButtonItem.h; sourceTree = "<group>"; };
 		5F8936E39C59922E41BAD1A6CCECC992 /* LDZFAlertController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LDZFAlertController-umbrella.h"; sourceTree = "<group>"; };
+		607937A372913475EE7EAE532760ACD4 /* MASUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASUtilities.h; path = Masonry/MASUtilities.h; sourceTree = "<group>"; };
 		61163AA691E4DFF44E36CFCE6C149253 /* LDZFAlertController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LDZFAlertController-prefix.pch"; sourceTree = "<group>"; };
 		617A8BE319FB5C91E72F11EA61338593 /* JCAlertController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JCAlertController.m; path = LDZFAlertController/Classes/JCAlertController.m; sourceTree = "<group>"; };
 		6B91827922EBCEA8CEB0329DE3AB53D1 /* Pods-LDZFAlertController_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LDZFAlertController_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		6CF8069504999FB8BF5FA1529175AA74 /* Masonry-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Masonry-umbrella.h"; sourceTree = "<group>"; };
+		6E17443EA85E103F4DD0553AB6BB942A /* MASLayoutConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASLayoutConstraint.m; path = Masonry/MASLayoutConstraint.m; sourceTree = "<group>"; };
 		6E4800573342427B414787BC75ACF569 /* Pods-LDZFAlertController_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-LDZFAlertController_Tests.modulemap"; sourceTree = "<group>"; };
-		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		6FF4AF21902029EC43C354AC0978CE49 /* MASLayoutConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASLayoutConstraint.h; path = Masonry/MASLayoutConstraint.h; sourceTree = "<group>"; };
+		72A95F8027E3EB86CB9AE2D7539201FE /* MASViewConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASViewConstraint.m; path = Masonry/MASViewConstraint.m; sourceTree = "<group>"; };
 		825FC8BE4900D5D4E489E1C1206DD82A /* Pods-LDZFAlertController_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LDZFAlertController_Example-frameworks.sh"; sourceTree = "<group>"; };
 		82C450F2B53FC4C1029DBA35DD138E55 /* UIWindow+JCBlur.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+JCBlur.m"; sourceTree = "<group>"; };
 		8308312FDE994303DE05D39777F8D78F /* Pods-LDZFAlertController_Tests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-LDZFAlertController_Tests"; path = Pods_LDZFAlertController_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		835DDA954C37F53F99576EB9A255557A /* Pods-LDZFAlertController_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LDZFAlertController_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		837834476F3329FA118B081516D4FC28 /* MASConstraint+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MASConstraint+Private.h"; path = "Masonry/MASConstraint+Private.h"; sourceTree = "<group>"; };
+		86765B456E483806C4E13D2DD50E40A4 /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "View+MASShorthandAdditions.h"; path = "Masonry/View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		884E7DD58FB936338BFD758E537E7C93 /* Pods-LDZFAlertController_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LDZFAlertController_Example-umbrella.h"; sourceTree = "<group>"; };
+		8AEEBD88282BA13360CAA867D8465C75 /* NSArray+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+MASAdditions.m"; path = "Masonry/NSArray+MASAdditions.m"; sourceTree = "<group>"; };
+		9073C3B74BC30C55B4EB5B2A596EAD72 /* MASConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASConstraint.m; path = Masonry/MASConstraint.m; sourceTree = "<group>"; };
 		919DC43780BCEDBFCE00A2658E5ACBC8 /* Pods-LDZFAlertController_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LDZFAlertController_Tests-dummy.m"; sourceTree = "<group>"; };
 		95B7A4F28E00234825EA506440EE2252 /* LDZFAlertController-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "LDZFAlertController-Info.plist"; sourceTree = "<group>"; };
 		96D9163261DF6E8ABAFFEC178E59A8AF /* Pods-LDZFAlertController_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-LDZFAlertController_Example.modulemap"; sourceTree = "<group>"; };
 		972D9A7E0A3F322BCF6089E9C872A0E9 /* UIColor+JCHightlightedColor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIColor+JCHightlightedColor.m"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A434C7DA1CDDCF44DB039F4BFD7FB15B /* UIViewController+JCPresentQueue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JCPresentQueue.h"; sourceTree = "<group>"; };
+		A78D3443F105E00FC21FE5A357C8F716 /* MASViewAttribute.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewAttribute.h; path = Masonry/MASViewAttribute.h; sourceTree = "<group>"; };
+		A85AE9E36F67A1B513CB8DA940771B4F /* Masonry-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Masonry-dummy.m"; sourceTree = "<group>"; };
+		A8BCCE8C6C17F326AFEDF4357C62ADAF /* MASViewAttribute.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASViewAttribute.m; path = Masonry/MASViewAttribute.m; sourceTree = "<group>"; };
 		AAA286783282B1F0C7D28D7A0B3DD278 /* LDZFAlertController.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = LDZFAlertController.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		ABF4F21D7A192F133C01D7A3E00529A9 /* JCAlertStyle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JCAlertStyle.h; sourceTree = "<group>"; };
 		ACBF17BA71B1E908BD4587B67DEB1434 /* JCAlertStyle.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JCAlertStyle.m; sourceTree = "<group>"; };
+		AF4497913DB548AE2E03103D3A97F34F /* View+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "View+MASAdditions.m"; path = "Masonry/View+MASAdditions.m"; sourceTree = "<group>"; };
+		B28EC2F4C626ED77509645BE3805CB29 /* MASConstraintMaker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASConstraintMaker.h; path = Masonry/MASConstraintMaker.h; sourceTree = "<group>"; };
 		B4865A14346CDC21191D2D32763C17B1 /* UIImage+JCColor2Image.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIImage+JCColor2Image.m"; sourceTree = "<group>"; };
 		BBFA9F414C97612FAF1E1FD4B4B3B36F /* LDZFAlertController.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LDZFAlertController.release.xcconfig; sourceTree = "<group>"; };
+		BDB676D9D5D3AFD89D8DDCE3369D4BAC /* Masonry-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Masonry-prefix.pch"; sourceTree = "<group>"; };
 		C90BB354930DAD14C95104CEB5A98671 /* JCAlertView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JCAlertView.m; sourceTree = "<group>"; };
 		CFA3E1F8C52DB4D38BF07C4A2550CC00 /* JCAlertButtonItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JCAlertButtonItem.m; sourceTree = "<group>"; };
+		D12E9F350C1C8076BE92719B89951AD8 /* MASViewConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewConstraint.h; path = Masonry/MASViewConstraint.h; sourceTree = "<group>"; };
+		D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		DFA1012B6A8BD076CD9F09831AE37A01 /* Masonry-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Masonry-Info.plist"; sourceTree = "<group>"; };
 		DFA7008AD8DEA647DCC2B4C571770045 /* JCAlertView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JCAlertView.h; sourceTree = "<group>"; };
 		E1859C531CDC1D389BE0D4F6E64CA1B8 /* JCPresentController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JCPresentController.h; sourceTree = "<group>"; };
 		E768ED3D074BCC0AA68EC2130D5FC27D /* Pods-LDZFAlertController_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LDZFAlertController_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		E7851906D7976272A721C8C4E0CE9092 /* NSLayoutConstraint+MASDebugAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSLayoutConstraint+MASDebugAdditions.h"; path = "Masonry/NSLayoutConstraint+MASDebugAdditions.h"; sourceTree = "<group>"; };
+		EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		EABFC0BB2D752E2A8E45A099AAA9399D /* JCAlertController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JCAlertController.h; path = LDZFAlertController/Classes/JCAlertController.h; sourceTree = "<group>"; };
+		EB7CC7527FD599A1064055C060E14B43 /* MASCompositeConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASCompositeConstraint.m; path = Masonry/MASCompositeConstraint.m; sourceTree = "<group>"; };
+		EDA8A3885BC33F25CB32442EB2449111 /* Masonry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Masonry.h; path = Masonry/Masonry.h; sourceTree = "<group>"; };
 		EFB3AA4AE78E0BDE1FB8B206D64E2069 /* JCPresentController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JCPresentController.m; sourceTree = "<group>"; };
 		F0C0055CED0E47567FC71E1AD68BD54C /* Pods-LDZFAlertController_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LDZFAlertController_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		F287598D192FA586BD4AECCD85B988A4 /* Masonry.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Masonry.debug.xcconfig; sourceTree = "<group>"; };
 		F6143F3486F97CDD23FFB764D90A3E21 /* LDZFAlertController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = LDZFAlertController.modulemap; sourceTree = "<group>"; };
 		FBBA6062827B9424B6B60C2E186DFBD7 /* Pods-LDZFAlertController_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LDZFAlertController_Example-dummy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		179DDB399897B3B3986D7854BAD6D0BF /* Frameworks */ = {
+		488E93606305ED83764298B56C0D4901 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37C79581D9622841E7955B22C79B0624 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		54E97EACECFA18BAB3E6428057BD2A31 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				24DD2281DF76090EE1B9C559BF91271D /* Foundation.framework in Frameworks */,
+				855250CE9FC7E74735663A6EC2C67426 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,17 +204,66 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9AB3028D5D659DA555516462021012EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A57324820751A10B449BBA0533BE897 /* Foundation.framework in Frameworks */,
+				674F2327755A0E515002A1C0E491D770 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E28C16493FB240476326E58709C18882 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AACBF20A31130D9AA6075CFB2DCF316A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1012310E6E3820B064ED59A8836AE47C /* Products */ = {
+		0CCC0CD98AB951949302B433AFE762AD /* Masonry */ = {
 			isa = PBXGroup;
 			children = (
-				084B349F778198B2F570C4AB4D84B3FB /* LDZFAlertController */,
-				39FC410209356383ADBC58DC3DED8362 /* Pods-LDZFAlertController_Example */,
-				8308312FDE994303DE05D39777F8D78F /* Pods-LDZFAlertController_Tests */,
+				4AD89987EC7EAE20D7034EEF9935E7CC /* MASCompositeConstraint.h */,
+				EB7CC7527FD599A1064055C060E14B43 /* MASCompositeConstraint.m */,
+				02CA69FDFD4D7BB11F8E3E2E7A0B9879 /* MASConstraint.h */,
+				9073C3B74BC30C55B4EB5B2A596EAD72 /* MASConstraint.m */,
+				837834476F3329FA118B081516D4FC28 /* MASConstraint+Private.h */,
+				B28EC2F4C626ED77509645BE3805CB29 /* MASConstraintMaker.h */,
+				470C5CD1265270E95A8A89443C727427 /* MASConstraintMaker.m */,
+				6FF4AF21902029EC43C354AC0978CE49 /* MASLayoutConstraint.h */,
+				6E17443EA85E103F4DD0553AB6BB942A /* MASLayoutConstraint.m */,
+				EDA8A3885BC33F25CB32442EB2449111 /* Masonry.h */,
+				607937A372913475EE7EAE532760ACD4 /* MASUtilities.h */,
+				A78D3443F105E00FC21FE5A357C8F716 /* MASViewAttribute.h */,
+				A8BCCE8C6C17F326AFEDF4357C62ADAF /* MASViewAttribute.m */,
+				D12E9F350C1C8076BE92719B89951AD8 /* MASViewConstraint.h */,
+				72A95F8027E3EB86CB9AE2D7539201FE /* MASViewConstraint.m */,
+				30EC6C5D191587619B42076546EDC448 /* NSArray+MASAdditions.h */,
+				8AEEBD88282BA13360CAA867D8465C75 /* NSArray+MASAdditions.m */,
+				27E12E3D2779B5C7A8301A94F715DB4C /* NSArray+MASShorthandAdditions.h */,
+				E7851906D7976272A721C8C4E0CE9092 /* NSLayoutConstraint+MASDebugAdditions.h */,
+				071EEE0A3CE36E163E09EA7F7915F1DE /* NSLayoutConstraint+MASDebugAdditions.m */,
+				047EE388CF208BD5F57049BD98558C94 /* View+MASAdditions.h */,
+				AF4497913DB548AE2E03103D3A97F34F /* View+MASAdditions.m */,
+				86765B456E483806C4E13D2DD50E40A4 /* View+MASShorthandAdditions.h */,
+				55960467D1B758EC688A18A171012E78 /* ViewController+MASAdditions.h */,
+				342C4D9B5E1E36390E7AF01E35444998 /* ViewController+MASAdditions.m */,
+				C84A449C2DE4F91F0620A5147DD42E0F /* Support Files */,
 			);
-			name = Products;
+			name = Masonry;
+			path = Masonry;
+			sourceTree = "<group>";
+		};
+		1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				59DA5C1F72E1D5BABC43EACBA672C3BA /* iOS */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		2284F43465BAE5D2B6AADB58A53DF2E4 /* Category */ = {
@@ -203,10 +321,11 @@
 			path = "Target Support Files/Pods-LDZFAlertController_Tests";
 			sourceTree = "<group>";
 		};
-		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+		59DA5C1F72E1D5BABC43EACBA672C3BA /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+				EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */,
+				D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
@@ -235,6 +354,14 @@
 				535F5CA203B8F5601F69847E7DE84CC1 /* Pods-LDZFAlertController_Tests */,
 			);
 			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		7529FD53BCE26816CCD46658378AAF1B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0CCC0CD98AB951949302B433AFE762AD /* Masonry */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		A69A5D9F01142E48402A83580769EA8C /* Pod */ = {
@@ -267,6 +394,21 @@
 			path = LDZFAlertController/Classes/ButtonItem;
 			sourceTree = "<group>";
 		};
+		C84A449C2DE4F91F0620A5147DD42E0F /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3E537C1F47DA8B06DA4A71E3D14F4DE4 /* Masonry.modulemap */,
+				A85AE9E36F67A1B513CB8DA940771B4F /* Masonry-dummy.m */,
+				DFA1012B6A8BD076CD9F09831AE37A01 /* Masonry-Info.plist */,
+				BDB676D9D5D3AFD89D8DDCE3369D4BAC /* Masonry-prefix.pch */,
+				6CF8069504999FB8BF5FA1529175AA74 /* Masonry-umbrella.h */,
+				F287598D192FA586BD4AECCD85B988A4 /* Masonry.debug.xcconfig */,
+				419A961AD957E23BAB6A998ED7623134 /* Masonry.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Masonry";
+			sourceTree = "<group>";
+		};
 		CB462758310548A4A944EF3D1DA5DE0B /* JCPresentQueue */ = {
 			isa = PBXGroup;
 			children = (
@@ -289,23 +431,27 @@
 			path = LDZFAlertController/Classes/AlertView;
 			sourceTree = "<group>";
 		};
+		CDBADE01066ED0E81FF7201D96627D7F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				084B349F778198B2F570C4AB4D84B3FB /* LDZFAlertController */,
+				1FFED36A657123030ABB700256D73F15 /* Masonry */,
+				39FC410209356383ADBC58DC3DED8362 /* Pods-LDZFAlertController_Example */,
+				8308312FDE994303DE05D39777F8D78F /* Pods-LDZFAlertController_Tests */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				4E3348BC0EFFD29BB4A5B5DE0179AD1A /* Development Pods */,
-				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				1012310E6E3820B064ED59A8836AE47C /* Products */,
+				1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */,
+				7529FD53BCE26816CCD46658378AAF1B /* Pods */,
+				CDBADE01066ED0E81FF7201D96627D7F /* Products */,
 				64DDEE56BB9F89E2295A97EE243ABA10 /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				578452D2E740E91742655AC8F1636D1F /* iOS */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		E37EC0A0E6A4B8126FE66F53721A4A12 /* Pods-LDZFAlertController_Example */ = {
@@ -328,29 +474,11 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		17CDEB6F697AF95FE74A6CC2518CF8F5 /* Headers */ = {
+		2112BCF11CFC6CD88FB0646C260688AE /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				980026EF835F78195763BD7B528C88AB /* JCAlertButtonItem.h in Headers */,
-				9BEC15D6675EC27836C2AE443865BB03 /* JCAlertController.h in Headers */,
-				B722B2751188617B0FC2AC02A792B5C6 /* JCAlertStyle.h in Headers */,
-				C33D5CE879D8B7C37C63E60EB292FC16 /* JCAlertView.h in Headers */,
-				15D058080792E15A154494FF63B924A7 /* JCPresentController.h in Headers */,
-				2EABA738F3E9E9E83206A09A7601FF9C /* LDZFAlertController-umbrella.h in Headers */,
-				2D800A53C85CEDE11594F5B85C9018BB /* NSAttributedString+JCCalculateSize.h in Headers */,
-				F5E06118F943A11C131D74847EDF5285 /* UIColor+JCHightlightedColor.h in Headers */,
-				D87D535CDE7ABD5553AA1B7BD59CC242 /* UIImage+JCColor2Image.h in Headers */,
-				15847F62D9B8A684581A1EBFF9125F8F /* UIViewController+JCPresentQueue.h in Headers */,
-				39B7A2872D83829CCEE6F8F7DDB6BC02 /* UIWindow+JCBlur.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		77B186A5AC43C6CE04B6833BA5B04F40 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				013BD7C01FAFD3DB9485574757302D81 /* Pods-LDZFAlertController_Example-umbrella.h in Headers */,
+				3F18FC9A35711FFE63E9804CAB2415BA /* Pods-LDZFAlertController_Example-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,6 +487,47 @@
 			buildActionMask = 2147483647;
 			files = (
 				125BB821E8BB84D2B2DE5BEEFE358FCB /* Pods-LDZFAlertController_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F8E509F08C187E3C942ADD46F00F7B7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47CC2875766AAFD344DBC55BD54E9A03 /* MASCompositeConstraint.h in Headers */,
+				5832445E3B9D8030E0ACBE7B2E9A2EC3 /* MASConstraint.h in Headers */,
+				668699018C9DA6BB59ACFAD45E65A329 /* MASConstraint+Private.h in Headers */,
+				6A99EB15AB9A43DCB407D799DA1B7AF2 /* MASConstraintMaker.h in Headers */,
+				0EF45BF2D28CDA5E44348B63DDF3629B /* MASLayoutConstraint.h in Headers */,
+				B84B3FD4FCDCC22D0301EB4A0A33D503 /* Masonry.h in Headers */,
+				4ED2E087D8F02EAFCE8B119DEEA320B6 /* Masonry-umbrella.h in Headers */,
+				81E9977A2D6C684FEDDA3411FD7A216E /* MASUtilities.h in Headers */,
+				2E0BCF0CB090E58DF556044A799F8E17 /* MASViewAttribute.h in Headers */,
+				AB2CBC60AF99C671BDBCAC0436A1515F /* MASViewConstraint.h in Headers */,
+				0BD1470816B89AAB474532D7FA6CD302 /* NSArray+MASAdditions.h in Headers */,
+				195012E52FB7BBBE4A5D86A36339224E /* NSArray+MASShorthandAdditions.h in Headers */,
+				22AB6B7D074DD7EBD6833FA6F7B0FD56 /* NSLayoutConstraint+MASDebugAdditions.h in Headers */,
+				5F5A5C8D87D5C1FBD4A7139EEF74D5CB /* View+MASAdditions.h in Headers */,
+				D90EAEF3B0F5C2594202CA122F98FFF9 /* View+MASShorthandAdditions.h in Headers */,
+				DA353674E51235757970F7256E99C4B1 /* ViewController+MASAdditions.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0C38EB7DBA48F3CD6E791581569BC61 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A8FDE18AD84B3AFD1FAEF913CE524949 /* JCAlertButtonItem.h in Headers */,
+				5CFC5BFE7286A3972971C9F889655460 /* JCAlertController.h in Headers */,
+				F22AA85B9798F21BCAE7714C8BDED656 /* JCAlertStyle.h in Headers */,
+				6B2F9EAFCDB47D29C9896AA345D0FC87 /* JCAlertView.h in Headers */,
+				9C3D373D687F22D65A44225004798BD5 /* JCPresentController.h in Headers */,
+				DF2FAB1519A735184C0CA179CB99885A /* LDZFAlertController-umbrella.h in Headers */,
+				60B213621083A87A42A3F124B6C0A230 /* NSAttributedString+JCCalculateSize.h in Headers */,
+				1AC717E990C7B5EB50E9CCD412F8B50C /* UIColor+JCHightlightedColor.h in Headers */,
+				C1EE8377D3F8DC54D74173CF23D951BE /* UIImage+JCColor2Image.h in Headers */,
+				6CAD360D2F4F3A3A243E7F939FDF3A4F /* UIViewController+JCPresentQueue.h in Headers */,
+				0EA50D8491D0C618627453CE35FABF22 /* UIWindow+JCBlur.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,25 +546,44 @@
 			buildRules = (
 			);
 			dependencies = (
-				5D0CF186EBC12BED3AA264AD3C852819 /* PBXTargetDependency */,
+				BB9446F9DCEC0864DAF685407278A220 /* PBXTargetDependency */,
 			);
 			name = "Pods-LDZFAlertController_Tests";
 			productName = Pods_LDZFAlertController_Tests;
 			productReference = 8308312FDE994303DE05D39777F8D78F /* Pods-LDZFAlertController_Tests */;
 			productType = "com.apple.product-type.framework";
 		};
-		683854E95B27B0416C8E3CBB5C3AD04A /* LDZFAlertController */ = {
+		55AF53E6C77A10ED4985E04D74A8878E /* Masonry */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 345FE963DB6D90BE89564A92392EE931 /* Build configuration list for PBXNativeTarget "LDZFAlertController" */;
+			buildConfigurationList = 8CCC50A6ADCB2B30024846AC865B4C8C /* Build configuration list for PBXNativeTarget "Masonry" */;
 			buildPhases = (
-				17CDEB6F697AF95FE74A6CC2518CF8F5 /* Headers */,
-				9430F79391AC7EEA300D1B51A65F1260 /* Sources */,
-				54E97EACECFA18BAB3E6428057BD2A31 /* Frameworks */,
-				F594720290B4EB64917F011EC1C9DE44 /* Resources */,
+				9F8E509F08C187E3C942ADD46F00F7B7 /* Headers */,
+				28AFFE8B3BB1629441682E3F5D12A810 /* Sources */,
+				9AB3028D5D659DA555516462021012EC /* Frameworks */,
+				42AB67C8F49C2B9A8AFEB250D85BC934 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+			);
+			name = Masonry;
+			productName = Masonry;
+			productReference = 1FFED36A657123030ABB700256D73F15 /* Masonry */;
+			productType = "com.apple.product-type.framework";
+		};
+		683854E95B27B0416C8E3CBB5C3AD04A /* LDZFAlertController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BA4DF66F148AB7A9148C8042764C181F /* Build configuration list for PBXNativeTarget "LDZFAlertController" */;
+			buildPhases = (
+				B0C38EB7DBA48F3CD6E791581569BC61 /* Headers */,
+				D842F0BBADA1A8A10DB11A585822304A /* Sources */,
+				E28C16493FB240476326E58709C18882 /* Frameworks */,
+				417B1EEC89037C2D8F881DAB810ED67C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9DE51B49EB747A6AB4A56425FA618CC9 /* PBXTargetDependency */,
 			);
 			name = LDZFAlertController;
 			productName = LDZFAlertController;
@@ -404,17 +592,18 @@
 		};
 		CF1F702B6DAE0C4A3D178580121E1929 /* Pods-LDZFAlertController_Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4EC443616AEB935548189BFFD56905FB /* Build configuration list for PBXNativeTarget "Pods-LDZFAlertController_Example" */;
+			buildConfigurationList = 88B32B17E2D11BA089CAA29E0210A384 /* Build configuration list for PBXNativeTarget "Pods-LDZFAlertController_Example" */;
 			buildPhases = (
-				77B186A5AC43C6CE04B6833BA5B04F40 /* Headers */,
-				CA153ADD4065A7CF448886B7A1BD6F4E /* Sources */,
-				179DDB399897B3B3986D7854BAD6D0BF /* Frameworks */,
-				E4711E3652E9BC63F21C0D9206577AFD /* Resources */,
+				2112BCF11CFC6CD88FB0646C260688AE /* Headers */,
+				2C704028A15C416F32AF3BD59EF23F5A /* Sources */,
+				488E93606305ED83764298B56C0D4901 /* Frameworks */,
+				F5CBEFF38FAE5D8497121459DBC76791 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				F44F54317958C6792D84C9EC13718B21 /* PBXTargetDependency */,
+				DA7EDCBAA1830DCF2F61F8DBD54C6972 /* PBXTargetDependency */,
+				CD80CD0CED48BF94A52BFAD0E93CDA02 /* PBXTargetDependency */,
 			);
 			name = "Pods-LDZFAlertController_Example";
 			productName = Pods_LDZFAlertController_Example;
@@ -439,11 +628,12 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 1012310E6E3820B064ED59A8836AE47C /* Products */;
+			productRefGroup = CDBADE01066ED0E81FF7201D96627D7F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				683854E95B27B0416C8E3CBB5C3AD04A /* LDZFAlertController */,
+				55AF53E6C77A10ED4985E04D74A8878E /* Masonry */,
 				CF1F702B6DAE0C4A3D178580121E1929 /* Pods-LDZFAlertController_Example */,
 				4A1A75308E123F75895BE3E7FA7B2DB2 /* Pods-LDZFAlertController_Tests */,
 			);
@@ -451,6 +641,20 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		417B1EEC89037C2D8F881DAB810ED67C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42AB67C8F49C2B9A8AFEB250D85BC934 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A597CD25CE3CC4EB9406B92E6CA0BF86 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -458,14 +662,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E4711E3652E9BC63F21C0D9206577AFD /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F594720290B4EB64917F011EC1C9DE44 /* Resources */ = {
+		F5CBEFF38FAE5D8497121459DBC76791 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -475,29 +672,47 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		9430F79391AC7EEA300D1B51A65F1260 /* Sources */ = {
+		28AFFE8B3BB1629441682E3F5D12A810 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				414183AE25379C68BE8C0F41798AD01A /* JCAlertButtonItem.m in Sources */,
-				695B50E36454FD19BC499EA80C8AD09C /* JCAlertController.m in Sources */,
-				EFFF2FD1ADB17C8D32C57FC17106806A /* JCAlertStyle.m in Sources */,
-				5FA5BA43B4DD81AA34307560DA64EAE4 /* JCAlertView.m in Sources */,
-				5F550BD96BFE2364CE4D14883C52E3B1 /* JCPresentController.m in Sources */,
-				63D53AA6A26EFF330DB4D59DE80026A5 /* LDZFAlertController-dummy.m in Sources */,
-				7C924684BBBAF3415DEF49492F6FD375 /* NSAttributedString+JCCalculateSize.m in Sources */,
-				C57813C88C1BDFCEC5A286232178FFA4 /* UIColor+JCHightlightedColor.m in Sources */,
-				D7F59C5291D36819A6B0281B4E5197F7 /* UIImage+JCColor2Image.m in Sources */,
-				16EEA2D7922EA3E1DDDE1E28B9DEB2B0 /* UIViewController+JCPresentQueue.m in Sources */,
-				F632EDC78A619F0BC0B1FCC2EE9B0501 /* UIWindow+JCBlur.m in Sources */,
+				12350BD143E2B69845A5E6794CEF9243 /* MASCompositeConstraint.m in Sources */,
+				654C947E4445C602B6762E4A9F69579B /* MASConstraint.m in Sources */,
+				9CE2CE9712AE3323DB25334906F47A70 /* MASConstraintMaker.m in Sources */,
+				5C3DFCE1107502CFC4E4C7C8285E9C39 /* MASLayoutConstraint.m in Sources */,
+				F990CAC590E21C05C870CF0D63208D41 /* Masonry-dummy.m in Sources */,
+				A694B5CCDD8877C71D98CFB60BDDE84B /* MASViewAttribute.m in Sources */,
+				C0BB50AC519A3CFACEC407E71D81CABA /* MASViewConstraint.m in Sources */,
+				870861B9E751DD2C1286B8241328DB11 /* NSArray+MASAdditions.m in Sources */,
+				006FF7C89B4E1631933AD3AAAC42365C /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				7C7DE0A2394CD87BCD9641B201B9A114 /* View+MASAdditions.m in Sources */,
+				8BB5458E24D009D9A134D8BE5EEE9D28 /* ViewController+MASAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CA153ADD4065A7CF448886B7A1BD6F4E /* Sources */ = {
+		2C704028A15C416F32AF3BD59EF23F5A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63ED2BFB9BEC7283EC15BF6C22B326F1 /* Pods-LDZFAlertController_Example-dummy.m in Sources */,
+				7638B7E0B94C019CA5AF56F8C11A8424 /* Pods-LDZFAlertController_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D842F0BBADA1A8A10DB11A585822304A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B30D4A012771712C9F7B38CAB3D161DE /* JCAlertButtonItem.m in Sources */,
+				3F092C9BBB1CCDE8BD9E53A78066BBBB /* JCAlertController.m in Sources */,
+				A6A88BC81962F44DAC54702E090B26CC /* JCAlertStyle.m in Sources */,
+				81D77AAD10D3E2F79F9D3359E52E9DB7 /* JCAlertView.m in Sources */,
+				97E135E6C32E985DE90F3B1067A3D662 /* JCPresentController.m in Sources */,
+				E3476BB07476E645577663926AF51541 /* LDZFAlertController-dummy.m in Sources */,
+				F2570AC0206FD0A4FC9F4D17F7B6D897 /* NSAttributedString+JCCalculateSize.m in Sources */,
+				ADF15C3636E9A05CD8B2CFB8121BFBD6 /* UIColor+JCHightlightedColor.m in Sources */,
+				54E4E2B466BA024E176CC8C349B6380D /* UIImage+JCColor2Image.m in Sources */,
+				B320004B903386AB3FC71938E0DCBE79 /* UIViewController+JCPresentQueue.m in Sources */,
+				4406B4845684D17EED65BCDAE562F407 /* UIWindow+JCBlur.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,22 +727,34 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		5D0CF186EBC12BED3AA264AD3C852819 /* PBXTargetDependency */ = {
+		9DE51B49EB747A6AB4A56425FA618CC9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Masonry;
+			target = 55AF53E6C77A10ED4985E04D74A8878E /* Masonry */;
+			targetProxy = 08E18BCD9A4D5574B9BD7141A1EF4240 /* PBXContainerItemProxy */;
+		};
+		BB9446F9DCEC0864DAF685407278A220 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-LDZFAlertController_Example";
 			target = CF1F702B6DAE0C4A3D178580121E1929 /* Pods-LDZFAlertController_Example */;
-			targetProxy = 8FE1CC2EE5F82646D52A117A474777E1 /* PBXContainerItemProxy */;
+			targetProxy = 3EE6DD5A4379F924FCD97B062C7BF490 /* PBXContainerItemProxy */;
 		};
-		F44F54317958C6792D84C9EC13718B21 /* PBXTargetDependency */ = {
+		CD80CD0CED48BF94A52BFAD0E93CDA02 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Masonry;
+			target = 55AF53E6C77A10ED4985E04D74A8878E /* Masonry */;
+			targetProxy = 7E8C3B33EB0AF2B6ADF3357AC675D0AF /* PBXContainerItemProxy */;
+		};
+		DA7EDCBAA1830DCF2F61F8DBD54C6972 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = LDZFAlertController;
 			target = 683854E95B27B0416C8E3CBB5C3AD04A /* LDZFAlertController */;
-			targetProxy = 136E72E54DAFB07EE696B368C9C187FE /* PBXContainerItemProxy */;
+			targetProxy = D4FF73B7C141E6827F493C4A1D8435E4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		1C32B36388CC6DE1BC87E09C5C432C56 /* Debug */ = {
+		1E38948D22F83C887C6056BB5D1DEBC1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4E819A676CAF71C86CC605CBEA1240CC /* LDZFAlertController.debug.xcconfig */;
 			buildSettings = {
@@ -556,6 +783,37 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		255366E17BCD5E339EA689A6AF059012 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BBFA9F414C97612FAF1E1FD4B4B3B36F /* LDZFAlertController.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/LDZFAlertController/LDZFAlertController-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LDZFAlertController/LDZFAlertController-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/LDZFAlertController/LDZFAlertController.modulemap";
+				PRODUCT_MODULE_NAME = LDZFAlertController;
+				PRODUCT_NAME = LDZFAlertController;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 		25AD9454612BF454A1E3DC4CD4FA8C6D /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -623,7 +881,69 @@
 			};
 			name = Debug;
 		};
-		32EDF2E0E317CAA68896F61F22D35893 /* Release */ = {
+		6454ADB310B0EDF4982EA6C3056B61D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 42CDF216740FDBE1C30F57D2AA05E205 /* Pods-LDZFAlertController_Tests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-LDZFAlertController_Tests/Pods-LDZFAlertController_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-LDZFAlertController_Tests/Pods-LDZFAlertController_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6D4FA90A5FCA564F5C57E16E431B5327 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F287598D192FA586BD4AECCD85B988A4 /* Masonry.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Masonry/Masonry-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Masonry/Masonry-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Masonry/Masonry.modulemap";
+				PRODUCT_MODULE_NAME = Masonry;
+				PRODUCT_NAME = Masonry;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		798437B4B13B6A1C04D988873446C7DD /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 317E7E0EF7142122B468057DA1CD15F0 /* Pods-LDZFAlertController_Example.release.xcconfig */;
 			buildSettings = {
@@ -656,7 +976,7 @@
 			};
 			name = Release;
 		};
-		51B78F834437D31504B831EA7D88C96F /* Debug */ = {
+		7C55D2BD765433FC0EDA7753E3520066 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 835DDA954C37F53F99576EB9A255557A /* Pods-LDZFAlertController_Example.debug.xcconfig */;
 			buildSettings = {
@@ -688,11 +1008,10 @@
 			};
 			name = Debug;
 		};
-		6454ADB310B0EDF4982EA6C3056B61D3 /* Debug */ = {
+		A80C979AEA0CB1BF38B1A86F671EE329 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 42CDF216740FDBE1C30F57D2AA05E205 /* Pods-LDZFAlertController_Tests.debug.xcconfig */;
+			baseConfigurationReference = 419A961AD957E23BAB6A998ED7623134 /* Masonry.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -701,24 +1020,24 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-LDZFAlertController_Tests/Pods-LDZFAlertController_Tests-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/Masonry/Masonry-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Masonry/Masonry-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-LDZFAlertController_Tests/Pods-LDZFAlertController_Tests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				MODULEMAP_FILE = "Target Support Files/Masonry/Masonry.modulemap";
+				PRODUCT_MODULE_NAME = Masonry;
+				PRODUCT_NAME = Masonry;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		C8AF9E411C687F4724642197A0FF47F5 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -815,49 +1134,9 @@
 			};
 			name = Release;
 		};
-		D9176FF4CE20F36FEB0C7BEA1AD59015 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BBFA9F414C97612FAF1E1FD4B4B3B36F /* LDZFAlertController.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/LDZFAlertController/LDZFAlertController-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/LDZFAlertController/LDZFAlertController-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/LDZFAlertController/LDZFAlertController.modulemap";
-				PRODUCT_MODULE_NAME = LDZFAlertController;
-				PRODUCT_NAME = LDZFAlertController;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		345FE963DB6D90BE89564A92392EE931 /* Build configuration list for PBXNativeTarget "LDZFAlertController" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1C32B36388CC6DE1BC87E09C5C432C56 /* Debug */,
-				D9176FF4CE20F36FEB0C7BEA1AD59015 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -867,20 +1146,38 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4EC443616AEB935548189BFFD56905FB /* Build configuration list for PBXNativeTarget "Pods-LDZFAlertController_Example" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				51B78F834437D31504B831EA7D88C96F /* Debug */,
-				32EDF2E0E317CAA68896F61F22D35893 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		7813FF57CBD45F1FE4FC359C5191B6A2 /* Build configuration list for PBXNativeTarget "Pods-LDZFAlertController_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6454ADB310B0EDF4982EA6C3056B61D3 /* Debug */,
 				C8AF9E411C687F4724642197A0FF47F5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		88B32B17E2D11BA089CAA29E0210A384 /* Build configuration list for PBXNativeTarget "Pods-LDZFAlertController_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7C55D2BD765433FC0EDA7753E3520066 /* Debug */,
+				798437B4B13B6A1C04D988873446C7DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8CCC50A6ADCB2B30024846AC865B4C8C /* Build configuration list for PBXNativeTarget "Masonry" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D4FA90A5FCA564F5C57E16E431B5327 /* Debug */,
+				A80C979AEA0CB1BF38B1A86F671EE329 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BA4DF66F148AB7A9148C8042764C181F /* Build configuration list for PBXNativeTarget "LDZFAlertController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E38948D22F83C887C6056BB5D1DEBC1 /* Debug */,
+				255366E17BCD5E339EA689A6AF059012 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

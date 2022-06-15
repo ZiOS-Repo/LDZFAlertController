@@ -34,53 +34,14 @@
 
 @implementation JCAlertStyle
 
-+ (instancetype)shareStyle {
-    static JCAlertStyle *style = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        style = [JCAlertStyle new];
-        // default
-        [style useDefaultStyle];
-    });
-    return style;
-}
-
-+ (JCAlertStyle *)styleWithType:(JCAlertType)type {
-    static JCAlertStyleCache *cache = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        cache = [JCAlertStyleCache new];
-        cache.styleNormal = [[JCAlertStyle alloc] initWithType:JCAlertTypeNormal];
-        cache.styleTitleOnly = [[JCAlertStyle alloc] initWithType:JCAlertTypeTitleOnly];
-        cache.styleContentOnly = [[JCAlertStyle alloc] initWithType:JCAlertTypeContentOnly];
-    });
-    
-    if (type == JCAlertTypeNormal) {
-        return cache.styleNormal;
-    } else if (type == JCAlertTypeTitleOnly) {
-        return cache.styleTitleOnly;
-    } else {
-        return cache.styleContentOnly;
-    }
-}
-
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wdeprecated-declarations"
-
-- (instancetype)initWithType:(JCAlertType)type {
-    if (self = [super init]) {
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
         [self useDefaultStyle];
-        
-        if (type == JCAlertTypeTitleOnly) {
-            [self useTitleOnlyStyle];
-        } else if (type == JCAlertTypeContentOnly) {
-            [self useContentOnlyStyle];
-        }
     }
     return self;
 }
-
-#pragma clang diagnostic pop
 
 - (void)useDefaultStyle {
     JCAlertStyleBackground *background = [JCAlertStyleBackground new];
@@ -136,8 +97,8 @@
     
     JCAlertStyleSeparator *separator = [JCAlertStyleSeparator new];
     separator.width = 0.5;
-    separator.color = JCColor(200, 200, 205);
-    
+    separator.color = JCColor(232, 232, 232);
+
     self.background = background;
     self.alertView = alertView;
     self.title = title;

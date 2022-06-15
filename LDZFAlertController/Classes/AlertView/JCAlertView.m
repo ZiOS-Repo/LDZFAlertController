@@ -10,12 +10,144 @@
 #import "NSAttributedString+JCCalculateSize.h"
 #import "JCAlertButtonItem.h"
 #import "UIImage+JCColor2Image.h"
+#import <Masonry/Masonry.h>
+
+NSInteger kButtonTag = 74637;
+
+@interface JCAlertButtonsView : UIView
+
+@property (nonatomic, strong) NSArray <JCAlertButtonItem *>*buttonsArray;
+
+@property (nonatomic, strong) JCAlertStyle *style;
+
+@property (nonatomic, copy) void(^ButtonClickAction)(JCAlertButtonItem *item);
+
+
+- (instancetype)initWithButtonsArray:(NSArray *)buttonsArray style:(JCAlertStyle *)style;
+
+@end
+
+@implementation JCAlertButtonsView
+
+- (instancetype)initWithButtonsArray:(NSArray *)buttonsArray style:(JCAlertStyle *)style {
+    if (self = [super initWithFrame:CGRectZero]) {
+        _buttonsArray = buttonsArray;
+        _style = style;
+        [self initSubviews];
+    }
+    return self;
+}
+
+- (void)initSubviews {
+    UIView *topLineView = [[UIView alloc] init];
+    topLineView.backgroundColor = self.style.separator.color;
+    [self addSubview:topLineView];
+    [topLineView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.top.trailing.equalTo(self);
+        make.height.mas_equalTo(self.style.separator.width);
+    }];
+    
+    for (NSInteger i = 0; i < self.buttonsArray.count; i++) {
+        JCAlertButtonItem *item = self.buttonsArray[i];
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        button.tag = kButtonTag+i;
+        [button setTitle:item.title forState:UIControlStateNormal];
+        [button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
+        if (item.type == JCButtonTypeNormal) {
+            button.titleLabel.font = self.style.buttonNormal.font;
+            [button setTitleColor:self.style.buttonNormal.textColor forState:UIControlStateNormal];
+            [button setTitleColor:self.style.buttonNormal.highlightTextColor forState:UIControlStateHighlighted];
+            [button setBackgroundImage:[UIImage createImageWithColor:self.style.buttonNormal.backgroundColor] forState:UIControlStateNormal];
+            [button setBackgroundImage:[UIImage createImageWithColor:self.style.buttonNormal.highlightBackgroundColor] forState:UIControlStateHighlighted];
+
+        } else if (item.type == JCButtonTypeCancel) {
+            button.titleLabel.font = self.style.buttonCancel.font;
+            [button setTitleColor:self.style.buttonCancel.textColor forState:UIControlStateNormal];
+            [button setTitleColor:self.style.buttonCancel.highlightTextColor forState:UIControlStateHighlighted];
+            [button setBackgroundImage:[UIImage createImageWithColor:self.style.buttonCancel.backgroundColor] forState:UIControlStateNormal];
+            [button setBackgroundImage:[UIImage createImageWithColor:self.style.buttonCancel.highlightBackgroundColor] forState:UIControlStateHighlighted];
+
+        } else if (item.type == JCButtonTypeWarning) {
+            button.titleLabel.font = self.style.buttonWarning.font;
+            [button setTitleColor:self.style.buttonWarning.textColor forState:UIControlStateNormal];
+            [button setTitleColor:self.style.buttonWarning.highlightTextColor forState:UIControlStateHighlighted];
+            [button setBackgroundImage:[UIImage createImageWithColor:self.style.buttonWarning.backgroundColor] forState:UIControlStateNormal];
+            [button setBackgroundImage:[UIImage createImageWithColor:self.style.buttonWarning.highlightBackgroundColor] forState:UIControlStateHighlighted];
+
+        } else if (item.type == JCButtonTypeCustom) {
+            button.titleLabel.font = item.font;
+            [button setTitleColor:item.textColor forState:UIControlStateNormal];
+            [button setTitleColor:[item.textColor colorWithAlphaComponent:0.5] forState:UIControlStateHighlighted];
+            [button setBackgroundImage:[UIImage createImageWithColor:self.style.buttonNormal.backgroundColor] forState:UIControlStateNormal];
+            [button setBackgroundImage:[UIImage createImageWithColor:self.style.buttonNormal.highlightBackgroundColor] forState:UIControlStateHighlighted];
+        }
+        
+        [self addSubview:button];
+        if (self.buttonsArray.count == 2) {
+            CGFloat width = self.style.alertView.width/2.f;
+            [button mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.width.mas_equalTo(width);
+                make.height.mas_equalTo(self.style.buttonNormal.height);
+                make.top.equalTo(self);
+                make.leading.equalTo(self).mas_equalTo(i*width);
+            }];
+        } else {
+            [button mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.leading.trailing.equalTo(self);
+                make.height.mas_equalTo(self.style.buttonNormal.height);
+                make.width.mas_equalTo(self.style.alertView.width);
+                make.top.equalTo(self).mas_equalTo(self.style.buttonNormal.height*i);
+            }];
+        }
+    }
+    
+    //添加分割线
+    if (self.buttonsArray.count == 2) {
+        CGFloat width = self.style.alertView.width/2.f;
+        UIView *middleLine = [[UIView alloc] init];
+        middleLine.backgroundColor = self.style.separator.color;
+        [self addSubview:middleLine];
+        [middleLine mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.bottom.equalTo(self);
+            make.leading.equalTo(self).mas_equalTo(width);
+            make.width.mas_equalTo(self.style.separator.width);
+        }];
+    } else if (self.buttonsArray.count > 2) {
+        for (NSInteger i = 1; i < self.buttonsArray.count; i++) {
+            UIView *bottomLineView = [[UIView alloc] init];
+            bottomLineView.backgroundColor = self.style.separator.color;
+            [self addSubview:bottomLineView];
+            [bottomLineView mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.leading.trailing.equalTo(self);
+                make.height.mas_equalTo(self.style.separator.width);
+                make.top.mas_equalTo(self.style.buttonNormal.height*(i));
+            }];
+        }
+    }
+    
+    
+    
+}
+
+- (void)emphasizeButton:(UIButton *)button {
+    button.titleLabel.font = [UIFont fontWithName:@"PingFangSC-Medium" size:15.f];
+}
+
+- (void)buttonAction:(UIButton *)button {
+    if (self.ButtonClickAction) {
+        self.ButtonClickAction(self.buttonsArray[button.tag-kButtonTag]);
+    }
+}
+
+
+@end
+
+
+
 
 @interface JCAlertView ()
 
 @property (nonatomic) CGFloat buttonHeight;
-@property (nonatomic, weak) UIButton *leftBtn;
-@property (nonatomic, weak) UIButton *rightBtn;
 
 @end
 
@@ -23,7 +155,10 @@
 
 - (void)willMoveToSuperview:(UIView *)newSuperview {
     [super willMoveToSuperview:newSuperview];
-    
+    for (UIView *sub in self.subviews) {
+        [sub removeFromSuperview];
+    }
+
     self.backgroundColor = [UIColor clearColor];
     
     JCAlertStyle *style = self.style;
@@ -39,8 +174,12 @@
     }
     
     // button height
-    self.buttonHeight = self.buttonItems.count > 0 ? style.buttonNormal.height : 0;
-    
+    self.buttonHeight = 0;
+    if (self.buttonItems.count > 0) {
+        BOOL moreAction = self.buttonItems.count > 2 ? YES:NO;
+        self.buttonHeight = moreAction ? self.buttonItems.count * self.style.buttonNormal.height : self.style.buttonNormal.height;
+    }
+
     // cal title height
     CGFloat titleHeight = 0;
     CGSize titleSize = CGSizeZero;
@@ -297,134 +436,25 @@
     }
     
     self.center = newSuperview.center;
+    
+    //重新布局
+    [self layoutIfNeeded];
 }
 
 - (void)setupButton {
-    if (self.buttonHeight > 0) {
-        JCAlertStyle *style = self.style;;
-        if (self.buttonItems.count > 1) {
-            JCAlertButtonItem *leftItem = self.buttonItems[0];
-            JCAlertStyleButton *styleButton = style.buttonNormal;
-            if (leftItem.type == JCButtonTypeCancel) {
-                styleButton = style.buttonCancel;
-            } else if (leftItem.type == JCButtonTypeWarning) {
-                styleButton = style.buttonWarning;
-            }
-            CGFloat alertHeight = (self.frame.size.height > self.style.alertView.maxHeight) ? self.style.alertView.maxHeight : self.frame.size.height;
-            UIButton *leftBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, alertHeight - self.buttonHeight, style.alertView.width / 2, self.buttonHeight)];
-            leftBtn.userInteractionEnabled = NO;
-            [leftBtn setTitle:leftItem.title forState:UIControlStateNormal];
-            [leftBtn setTitleColor:styleButton.textColor forState:UIControlStateNormal];
-            [leftBtn setTitleColor:styleButton.highlightTextColor forState:UIControlStateHighlighted];
-            [leftBtn setBackgroundImage:[UIImage createImageWithColor:styleButton.backgroundColor] forState:UIControlStateNormal];
-            [leftBtn setBackgroundImage:[UIImage createImageWithColor:styleButton.highlightBackgroundColor] forState:UIControlStateHighlighted];
-            leftBtn.titleLabel.font = styleButton.font;
-            [self addSubview:leftBtn];
-            self.leftBtn = leftBtn;
-            
-            JCAlertButtonItem *rightItem = self.buttonItems[1];
-            styleButton = style.buttonNormal;
-            if (rightItem.type == JCButtonTypeCancel) {
-                styleButton = style.buttonCancel;
-            } else if (rightItem.type == JCButtonTypeWarning) {
-                styleButton = style.buttonWarning;
-            }
-            UIButton *rightBtn = [[UIButton alloc] initWithFrame:CGRectMake(style.alertView.width / 2, alertHeight - self.buttonHeight, style.alertView.width / 2, self.buttonHeight)];
-            rightBtn.userInteractionEnabled = NO;
-            [rightBtn setTitle:rightItem.title forState:UIControlStateNormal];
-            [rightBtn setTitleColor:styleButton.textColor forState:UIControlStateNormal];
-            [rightBtn setTitleColor:styleButton.highlightTextColor forState:UIControlStateHighlighted];
-            [rightBtn setBackgroundImage:[UIImage createImageWithColor:styleButton.backgroundColor] forState:UIControlStateNormal];
-            [rightBtn setBackgroundImage:[UIImage createImageWithColor:styleButton.highlightBackgroundColor] forState:UIControlStateHighlighted];
-            rightBtn.titleLabel.font = styleButton.font;
-            [self addSubview:rightBtn];
-            self.rightBtn = rightBtn;
-            
-            UIView *separator = [[UIView alloc] initWithFrame:CGRectMake(0, self.frame.size.height - self.buttonHeight, style.alertView.width, style.separator.width)];
-            separator.backgroundColor = style.separator.color;
-            [self addSubview:separator];
-            
-            UIView *separator1 = [[UIView alloc] initWithFrame:CGRectMake(style.alertView.width / 2, self.frame.size.height - self.buttonHeight, style.separator.width, styleButton.height)];
-            separator1.backgroundColor = style.separator.color;
-            [self addSubview:separator1];
-        } else {
-            JCAlertButtonItem *item = self.buttonItems[0];
-            JCAlertStyleButton *styleButton = style.buttonNormal;
-            if (item.type == JCButtonTypeCancel) {
-                styleButton = style.buttonCancel;
-            } else if (item.type == JCButtonTypeWarning) {
-                styleButton = style.buttonWarning;
-            }
-            CGFloat alertHeight = (self.frame.size.height > self.style.alertView.maxHeight) ? self.style.alertView.maxHeight : self.frame.size.height;
-            UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, alertHeight - self.buttonHeight, style.alertView.width, self.buttonHeight)];
-            btn.userInteractionEnabled = NO;
-            [btn setTitle:item.title forState:UIControlStateNormal];
-            [btn setTitleColor:styleButton.textColor forState:UIControlStateNormal];
-            [btn setTitleColor:styleButton.highlightTextColor forState:UIControlStateHighlighted];
-            [btn setBackgroundImage:[UIImage createImageWithColor:styleButton.backgroundColor] forState:UIControlStateNormal];
-            [btn setBackgroundImage:[UIImage createImageWithColor:styleButton.highlightBackgroundColor] forState:UIControlStateHighlighted];
-            btn.titleLabel.font = styleButton.font;
-            [self addSubview:btn];
-            self.leftBtn = btn;
-            
-            UIView *separator = [[UIView alloc] initWithFrame:CGRectMake(0, self.frame.size.height - self.buttonHeight, style.alertView.width, style.separator.width)];
-            separator.backgroundColor = style.separator.color;
-            [self addSubview:separator];
-        }
-    }
-}
-
-- (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    UITouch *touch = [[touches allObjects] lastObject];
-    CGPoint originPoint = [touch locationInView:self];
-    
-    [self handleTouch:originPoint insideLeft:^{
-        self.leftBtn.highlighted = YES;
-        self.rightBtn.highlighted = NO;
-    } insideRight:^{
-        self.rightBtn.highlighted = YES;
-        self.leftBtn.highlighted = NO;
-    } neither:^{
-        self.rightBtn.highlighted = NO;
-        self.leftBtn.highlighted = NO;
+    JCAlertButtonsView *buttonsView = [[JCAlertButtonsView alloc] initWithButtonsArray:self.buttonItems style:self.style];
+    [self addSubview:buttonsView];
+    [buttonsView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.trailing.bottom.equalTo(self);
+        make.height.mas_equalTo(self.buttonHeight);
     }];
-}
-
-- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    UITouch *touch = [[touches allObjects] lastObject];
-    CGPoint originPoint = [touch locationInView:self];
-    
-    [self handleTouch:originPoint insideLeft:^{
-        [self leftBtnClick];
-    } insideRight:^{
-        [self rightBtnClick];
-    } neither:nil];
-}
-
-- (void)handleTouch:(CGPoint)originPoint insideLeft:(void(^)(void))insideLeft insideRight:(void(^)(void))insideRight neither:(void(^)(void))neither {
-    CGPoint point = [self convertPoint:originPoint toView:self.leftBtn];
-    if (point.x > 0 && point.y > 0 && point.x <= self.leftBtn.frame.size.width && point.y <= self.leftBtn.frame.size.height) {
-        insideLeft();
-    } else {
-        point = [self convertPoint:originPoint toView:self.rightBtn];
-        if (point.x > 0 && point.y > 0 && point.x <= self.rightBtn.frame.size.width && point.y <= self.rightBtn.frame.size.height) {
-            insideRight();
-        } else {
-            if (neither) {
-                neither();
-            }
+    __weak __typeof(self)weakSelf = self;
+    buttonsView.ButtonClickAction = ^(JCAlertButtonItem *item) {
+        __strong __typeof(weakSelf)strongSelf = weakSelf;
+        if ([strongSelf.delegate respondsToSelector:@selector(alertButtonClicked:)]) {
+            [strongSelf.delegate alertButtonClicked:item.clicked];
         }
-    }
-}
-
-- (void)leftBtnClick {
-    JCAlertButtonItem *item = self.buttonItems[0];
-    [self notifyDelegateWithClicked:item.clicked];
-}
-
-- (void)rightBtnClick {
-    JCAlertButtonItem *item = self.buttonItems[1];
-    [self notifyDelegateWithClicked:item.clicked];
+    };
 }
 
 - (void)notifyDelegateWithClicked:(void(^)(void))clicked {

@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "summary": "A short description of LDZFAlertController.",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/zhuyuhui434@gmail.com/LDZFAlertController",
+  "homepage": "https://github.com/ZiOS-Repo/LDZFAlertController",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,11 +12,16 @@
     "zhuyuhui434@gmail.com": "zhuyuhui434@gmail.com"
   },
   "source": {
-    "git": "https://github.com/zhuyuhui434@gmail.com/LDZFAlertController.git",
+    "git": "https://github.com/ZiOS-Repo/LDZFAlertController.git",
     "tag": "0.1.0"
   },
   "platforms": {
     "ios": "9.0"
   },
-  "source_files": "LDZFAlertController/Classes/**/*"
+  "source_files": "LDZFAlertController/Classes/**/*",
+  "dependencies": {
+    "Masonry": [
+
+    ]
+  }
 }
